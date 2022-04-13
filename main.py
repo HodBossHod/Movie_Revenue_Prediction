@@ -9,8 +9,27 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 
-directors=pd.read_csv("movie-director.csv")
-voice_actors=pd.read_csv("movie-voice-actors.csv")
-movie_revenue=pd.read_csv("movies-revenue.csv")
+directors = pd.read_csv("movie-director.csv")
+voice_actors = pd.read_csv("movie-voice-actors.csv")
+movie_revenue = pd.read_csv("movies-revenue.csv")
 
-print("Hello world")
+# master = pd.DataFrame(
+#     columns=['movie_title', 'release_date', 'genre', 'MPAA_rating', 'revenue', 'director', 'voice-actor', 'movie'])
+
+# master = pd.merge(directors, movie_revenue, how='outer')
+# # master = pd.marge(master,movie_revenue)
+# # master.shape
+# master.to_csv('master.csv', index=False)
+# print(master.head())
+
+master = pd.read_csv('master.csv')
+
+master1 = pd.merge(master, voice_actors, how='outer')
+
+master1.to_csv('final.csv', index=False)
+
+final = pd.read_csv('final.csv')
+print(final.movie_title.nunique())
+
+# master.insert(-2, 'director', director)
+# print(master.head())
