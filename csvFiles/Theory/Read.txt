@@ -1,0 +1,3 @@
+In the "complete_data" file I supposed All the movies that were released  in the same year have the same 
+director and same characters and voice actors it seems very wrong but that is the best I can get so It is still a theory 
+I made some preprocessing also I hope it helps.
