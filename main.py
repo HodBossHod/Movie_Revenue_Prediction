@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn import linear_model
 from sklearn import metrics
+from dateutil import parser
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures
@@ -11,6 +12,7 @@ import matplotlib.pyplot as plt
 from googlesearch import search
 from sklearn.preprocessing import OneHotEncoder
 import re
+from datetime import datetime
 
 revenue_df = pd.read_csv('movies-revenue.csv')
 actor_df = pd.read_csv('movie-voice-actors.csv')
@@ -22,6 +24,15 @@ def encoder(d, columnName):
     final_df = pd.DataFrame(d.join(y))
     final_df.drop(columnName, axis=1, inplace=True)
     return final_df
+
+def handleDate(dr):
+    editDate = []
+    date = dr['release_date']
+    for i in date:
+        editDate.append(datetime.strptime(i, '%d-%b-%y').year)
+        dr['release_date']=pd.DataFrame(editDate)
+    return pd.DataFrame(editDate)
+
 
 
 
@@ -111,6 +122,13 @@ d = encoder(d, 'genre')
 d = encoder(d, 'MPAA_rating')
 d = encoder(d, 'director')
 d.to_csv('one hot final.csv')
+
+handleDate(d)
+d.to_csv('one hot final.csv')
+print(d['release_date'])
+
+
+
 
 
 
