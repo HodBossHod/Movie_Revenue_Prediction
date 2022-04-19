@@ -9,13 +9,23 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 from googlesearch import search
+from sklearn.preprocessing import OneHotEncoder
 import re
 
 revenue_df = pd.read_csv('movies-revenue.csv')
 actor_df = pd.read_csv('movie-voice-actors.csv')
 
 
-# print(actor_df.isna().sum())
+
+def encoder(d, columnName):
+    y = pd.get_dummies(d[columnName])
+    final_df = pd.DataFrame(d.join(y))
+    final_df.drop(columnName, axis=1, inplace=True)
+    return final_df
+
+
+
+
 
 def get_director(movie_name):
     query = movie_name + ' director'  # the movie name +'director'
@@ -94,3 +104,15 @@ movies_df = movies_df.apply(lambda x: x.str.strip('$') if x.dtype == "object" el
 # removing the comma from the numeric columns
 movies_df = movies_df.apply(lambda x: x.replace(',', "", regex=True) if x.dtype == "object" else x)
 movies_df.to_csv('final.csv')
+
+d = pd.read_csv('final.csv')
+
+d = encoder(d, 'genre')
+d = encoder(d, 'MPAA_rating')
+d = encoder(d, 'director')
+d.to_csv('one hot final.csv')
+
+
+
+
+
