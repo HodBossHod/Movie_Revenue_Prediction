@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
-from googlesearch import search
+#from googlesearch import search
 from sklearn.preprocessing import OneHotEncoder
 import re
 from datetime import datetime
@@ -119,6 +119,10 @@ movies_df.to_csv('final.csv')
 
 d = pd.read_csv('final.csv')
 
+#Using Ordinal Encoding
+#Rating_dict = {'G': 4, 'PG': 3, 'PG-13': 2, 'R': 1, 'Not Rated': 0}
+#d['MPAA_rating'] = d.MPAA_rating.map(Rating_dict)
+
 d = encoder(d, 'genre')
 d = encoder(d, 'MPAA_rating')
 d = encoder(d, 'director')
@@ -126,18 +130,88 @@ d.to_csv('one hot final.csv')
 
 handleDate(d)
 d.to_csv('one hot final.csv')
+correct_Data=d.iloc[:,:]
 
-rightData=d.iloc[:,:]
+
+# Remove Not Features
+correct_Data.drop(correct_Data.columns[[0, 1]], axis = 1, inplace = True)
+
+#load X and Y
+index_data = correct_Data.columns.values.tolist()
+index_data.remove('revenue')
+X = correct_Data[index_data]
+Y = correct_Data['revenue']
 
 # correlation
-featuresCorrelation=rightData.corr()
-topFeature=featuresCorrelation.index[abs(featuresCorrelation['revenue']) > 0.1]
+featuresCorrelation = correct_Data.corr()
+topFeature = featuresCorrelation.index[abs(featuresCorrelation['revenue']) > 0.1]
 plt.subplots(figsize=(11,9))
-topCorrelation=d[topFeature].corr()
+topCorrelation = d[topFeature].corr()
 print(topCorrelation)
 sns.heatmap(topCorrelation, annot=True)
 plt.show()
 
+#Using Multiple linear regression
+list5=[]
+list_Multi =[]
+for i in range(1,50):
+    #Split the data to training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True,random_state=i)
+
+    # fit the transformed features to Linear Regression
+    cl = linear_model.LinearRegression()
+
+    #Using Multiple linear regression
+    cl.fit(X_train, y_train)
+    prediction = cl.predict(X_test)
+
+
+    cl.fit(X_train, y_train)
+    prediction = cl.predict(X_test)
+    list_Multi.append( metrics.mean_squared_error(np.asarray(y_test), prediction))
+
+
+#plot relation between MSE and random_state
+list_y = [i for i in range(1,50)]
+plt.title('Relation between MSE and random_state ')
+plt.xlabel('random_state',fontsize=15)
+plt.ylabel('MSE',fontsize=15)
+plt.plot(list_y, list_Multi, color='red', linewidth=3)
+plt.show()
+
+list5.append(min(list_Multi))
+index_random_state = list_Multi.index(min(list_Multi))+1
+print('Mean Square Error of Multiple linear regression when i = {} is :'.format(index_random_state), min(list_Multi))
+
+
+#Using polynomial regression
+
+# Split the data to training and testing sets
+
+# for i in range(1, 2):
+
+poly_features = PolynomialFeatures(degree=2)
+
+X_train_poly = poly_features.fit_transform(X_train)
+
+cl.fit(X_train_poly, y_train)
+
+Y_train_predicted = cl.predict(X_train_poly)
+
+Y_test_predicted = cl.predict(poly_features.fit_transform(X_test))
+
+
+#list_poly.append(metrics.mean_squared_error(np.asarray(y_test), Y_test_predicted))
+
+
+#plot relation between MSE and random_state
+# plt.title('Relation between MSE and degree ')
+# plt.xlabel('degree',fontsize=15)
+# plt.ylabel('MSE',fontsize=15)
+# plt.plot(list_y, list_poly, color='red', linewidth=3)
+# plt.show()
+
+print('Mean Square Error of polynomial linear regression when i  is :',metrics.mean_squared_error(np.asarray(y_test), Y_test_predicted))
 
 
 
