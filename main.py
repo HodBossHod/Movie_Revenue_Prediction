@@ -13,6 +13,7 @@ from googlesearch import search
 from sklearn.preprocessing import OneHotEncoder
 import re
 from datetime import datetime
+from sklearn import metrics
 
 revenue_df = pd.read_csv('movies-revenue.csv')
 actor_df = pd.read_csv('movie-voice-actors.csv')
@@ -125,7 +126,17 @@ d.to_csv('one hot final.csv')
 
 handleDate(d)
 d.to_csv('one hot final.csv')
-print(d['release_date'])
+
+rightData=d.iloc[:,:]
+
+# correlation
+featuresCorrelation=rightData.corr()
+topFeature=featuresCorrelation.index[abs(featuresCorrelation['revenue']) > 0.1]
+plt.subplots(figsize=(11,9))
+topCorrelation=d[topFeature].corr()
+print(topCorrelation)
+sns.heatmap(topCorrelation, annot=True)
+plt.show()
 
 
 
