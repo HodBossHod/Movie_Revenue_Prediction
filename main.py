@@ -18,25 +18,26 @@ from sklearn import metrics
 revenue_df = pd.read_csv('movies-revenue.csv')
 actor_df = pd.read_csv('movie-voice-actors.csv')
 
-
+#one hot encoding for movies genre
 def encoder(d, columnName):
     y = pd.get_dummies(d[columnName])
     final_df = pd.DataFrame(d.join(y))
     final_df.drop(columnName, axis=1, inplace=True)
     return final_df
 
-
+#modify the date format
 def handleDate(dr):
     editDate = []
     date = dr['release_date']
     now = datetime.now().year
     for i in date:
+        print(datetime.strptime(i, '%d-%b-%y').year)
         editDate.append(now - datetime.strptime(i, '%d-%b-%y').year)
     dr['release_date'] = pd.DataFrame(editDate)
 
     return pd.DataFrame(editDate)
 
-
+#get directors for na values
 def get_director(movie_name):
     query = movie_name + ' director'  # the movie name +'director'
     link_list = []
@@ -68,6 +69,7 @@ def get_director(movie_name):
         return ''
 
 
+#create a dictionary for directors (keys:movietitle, values:directors names)
 def fill_new_director():
     # getting the movie directors
     directors = {'movie_title': [], 'director': []}
@@ -81,6 +83,7 @@ def fill_new_director():
     return df_directors
 
 
+#filter features according to correlation
 def correlation(df, col_name):
     # Feature Selection
     # Get the correlation between the features
@@ -95,6 +98,7 @@ def correlation(df, col_name):
     return top_feature
 
 
+#apply polynomial regression model
 def poly_reg(degree, X_train, y_train, X_test, y_test):
     model_1_poly_features = PolynomialFeatures(degree=degree)
     # transforms the existing features to higher degree features.
@@ -109,6 +113,7 @@ def poly_reg(degree, X_train, y_train, X_test, y_test):
     return metrics.mean_squared_error(y_test, prediction)
 
 
+#merging tables
 # director_df = fill_new_director()
 print(revenue_df.shape)
 director_df = pd.read_csv('new_directors.csv')
@@ -139,14 +144,17 @@ movies_df = pd.merge(rev_dir_df, is_animation_df, how='inner', on='movie_title')
 movies_df.drop_duplicates(inplace=True)
 print(movies_df.shape)
 movies_df.fillna(0, inplace=True)
+#merging ended
+
+
 
 # removing the dollar sign from movies_df columns
 movies_df = movies_df.apply(lambda x: x.str.strip('$') if x.name == "revenue" else x)
 # removing the comma from the numeric columns
 movies_df = movies_df.apply(lambda x: x.replace(',', "", regex=True) if x.name == "revenue" else x)
-# converting to numeric our columns (where it is possible)
+# converting to numerize our columns (where it is possible)
 movies_df = movies_df.apply(lambda x: pd.to_numeric(x, errors="ignore") if x.name == "revenue" else x)
-# cleaning the data
+# cleaning the data of release date
 movies_df = movies_df.apply(
     lambda x: x.replace('((\d\d-...-)|(\d-...-))', '', regex=True) if x.name == "release_date" else x)
 movies_df['release_date'] = movies_df['release_date'].astype('int32')
