@@ -30,9 +30,9 @@ def handleDate(dr):
     editDate = []
     date = dr['release_date']
     now = datetime.now().year
-    for i in date:
-        print(datetime.strptime(i, '%d-%b-%y').year)
-        editDate.append(now - datetime.strptime(i, '%d-%b-%y').year)
+    for i in date:       
+        editDate.append(now - i)
+
     dr['release_date'] = pd.DataFrame(editDate)
 
     return pd.DataFrame(editDate)
@@ -79,6 +79,7 @@ def fill_new_director():
         directors['director'].append(get_director(move))
     df_directors = pd.DataFrame.from_dict(directors, orient='index').T
     print(df_directors.head())
+
     df_directors.to_csv('new_directors.csv', index=False)
     return df_directors
 
@@ -163,8 +164,14 @@ movies_df["release_date"] = np.where(movies_df["release_date"] >= 37, movies_df[
                                      movies_df['release_date'] + 2000)
 
 movies_df.to_csv('clean_data.csv', index=False)
-encodlist = ['genre', 'MPAA_rating', 'director']
+#using ordinal encoding
+Rating_dict = {'G': 4, 'PG': 3, 'PG-13': 2, 'R': 1, 'Not Rated': 0}
+movies_df['MPAA_rating'] = movies_df.MPAA_rating.map(Rating_dict)
+
+encodlist = ['genre', 'director']
 movies_df = encoder(movies_df, encodlist)
+handleDate(movies_df)
+
 movies_df.to_csv('clean_data.csv', index=False)
 X = movies_df[correlation(movies_df, 'revenue')]
 Y = movies_df['revenue']  # Label
@@ -174,17 +181,20 @@ X.drop('revenue', axis=1, inplace=True)
 # X.drop('revenue',inplace= True)
 print(Y.shape)
 MSE = []
-# dgree = []
+dgree = []
 
-# for i in range(1, 15):
+#for i in range(1, 10):
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True, random_state=11)
-MSE.append(poly_reg(2, X_train, y_train, X_test, y_test))
-# dgree.append(i)
 
-# plt.xlabel('degree', fontsize=20)
-# plt.ylabel('random state', fontsize=20)
-# plt.plot(dgree, MSE, color='red', linewidth=3)
-# plt.show()
+print(poly_reg(1, X_train, y_train, X_test, y_test))
+print("---------")
+#dgree.append(i)
+    #print(dgree[i])
+
+'''plt.xlabel('degree', fontsize=20)
+plt.ylabel('random state', fontsize=20)
+plt.plot(dgree, MSE, color='red', linewidth=3)
+plt.show()'''
 # print(movies_df.columns)
 # print(movies_df.shape)
 # d = pd.read_csv('clean_data.csv')
