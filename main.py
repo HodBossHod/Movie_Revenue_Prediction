@@ -86,13 +86,12 @@ def correlation(df, col_name):
     # Get the correlation between the features
     corr = df.corr()
     # Top 0% Correlation training features with the Value
-    top_feature = corr.index[abs(corr[col_name]) > 0.05]
+    top_feature = corr.index[abs(corr[col_name]) > 0.1]
     # Correlation plot
     plt.subplots(figsize=(12, 8))
     top_corr = df[top_feature].corr()
     sns.heatmap(top_corr, annot=True)
     plt.show()
-    # top_feature = top_feature.remove(col_name)
     return top_feature
 
 
@@ -106,7 +105,7 @@ def poly_reg(degree, X_train, y_train, X_test, y_test):
     poly_model1.fit(X_train_poly_model_1, y_train)
     prediction = poly_model1.predict(model_1_poly_features.fit_transform(X_test))
 
-    print(f'Mean Square Error of the polynomial Regression    {metrics.mean_squared_error(y_test, prediction)}')
+    print(f'Mean Square Error of the at degree of polynomial Regression    {metrics.mean_squared_error(y_test, prediction)}')
     return metrics.mean_squared_error(y_test, prediction)
 
 
@@ -115,7 +114,7 @@ print(revenue_df.shape)
 director_df = pd.read_csv('new_directors.csv')
 print(director_df.shape)
 rev_dir_df = pd.merge(revenue_df, director_df, how='inner', on='movie_title')
-rev_dir_df.drop_duplicates(inplace=True);
+rev_dir_df.drop_duplicates(inplace=True)
 print(rev_dir_df.shape)
 rev_dir_df.to_csv('dir.csv', index=False)
 print(rev_dir_df.shape)
@@ -146,7 +145,7 @@ movies_df = movies_df.apply(lambda x: x.str.strip('$') if x.name == "revenue" el
 # removing the comma from the numeric columns
 movies_df = movies_df.apply(lambda x: x.replace(',', "", regex=True) if x.name == "revenue" else x)
 # converting to numeric our columns (where it is possible)
-movies_df = movies_df.apply(lambda x: pd.to_numeric(x, errors="ignore") if x.dtype == "object" else x)
+movies_df = movies_df.apply(lambda x: pd.to_numeric(x, errors="ignore") if x.name == "revenue" else x)
 # cleaning the data
 movies_df = movies_df.apply(
     lambda x: x.replace('((\d\d-...-)|(\d-...-))', '', regex=True) if x.name == "release_date" else x)
@@ -161,8 +160,23 @@ movies_df = encoder(movies_df, encodlist)
 movies_df.to_csv('clean_data.csv', index=False)
 X = movies_df[correlation(movies_df, 'revenue')]
 Y = movies_df['revenue']  # Label
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True, random_state=23)
-poly_reg(2, X_train, y_train, X_test, y_test)
+# print(X['revenue'])
+# print(X.head())
+X.drop('revenue', axis=1, inplace=True)
+# X.drop('revenue',inplace= True)
+print(Y.shape)
+MSE = []
+# dgree = []
+
+# for i in range(1, 15):
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True, random_state=11)
+MSE.append(poly_reg(2, X_train, y_train, X_test, y_test))
+# dgree.append(i)
+
+# plt.xlabel('degree', fontsize=20)
+# plt.ylabel('random state', fontsize=20)
+# plt.plot(dgree, MSE, color='red', linewidth=3)
+# plt.show()
 # print(movies_df.columns)
 # print(movies_df.shape)
 # d = pd.read_csv('clean_data.csv')
