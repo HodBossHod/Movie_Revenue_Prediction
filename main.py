@@ -29,9 +29,11 @@ def encoder(d, columnName):
 def handleDate(dr):
     editDate = []
     date = dr['release_date']
+    now = datetime.now().year
     for i in date:
-        editDate.append(datetime.strptime(i, '%d-%b-%y').year)
+        editDate.append(now - datetime.strptime(i, '%d-%b-%y').year)
         dr['release_date']=pd.DataFrame(editDate)
+
     return pd.DataFrame(editDate)
 
 
@@ -131,7 +133,7 @@ d.to_csv('one hot final.csv')
 handleDate(d)
 d.to_csv('one hot final.csv')
 correct_Data=d.iloc[:,:]
-
+print(correct_Data['release_date'])
 
 # Remove Not Features
 correct_Data.drop(correct_Data.columns[[0, 1]], axis = 1, inplace = True)
