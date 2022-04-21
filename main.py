@@ -1,4 +1,3 @@
-from sklearn import preprocessing
 import pandas as pd
 import numpy as np
 from sklearn import linear_model
@@ -7,16 +6,24 @@ from dateutil import parser
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures
+from sklearn.metrics import r2_score
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
-from googlesearch import search
+#from googlesearch import search
 from sklearn.preprocessing import OneHotEncoder
 import re
 from datetime import datetime
-from sklearn import metrics
 
 revenue_df = pd.read_csv('movies-revenue.csv')
 actor_df = pd.read_csv('movie-voice-actors.csv')
+
+#Feature Scaling
+def featureScaling(X,a,b):
+    X = np.array(X)
+    Normalized_X=np.zeros((X.shape[0],X.shape[1]))
+    for i in range(X.shape[1]):
+        Normalized_X[:,i]=((X[:,i]-min(X[:,i]))/(max(X[:,i])-min(X[:,i])))*(b-a)+a
+    return Normalized_X
 
 #one hot encoding for movies genre
 def encoder(d, columnName):
@@ -33,9 +40,9 @@ def handleDate(dr):
     for i in date:       
         editDate.append(now - i)
 
-    dr['release_date'] = pd.DataFrame(editDate)
-
-    return pd.DataFrame(editDate)
+    editDate = pd.DataFrame(editDate, columns=['new_date'])
+    dr['release_date'] = editDate['new_date'].values
+    return dr['release_date']
 
 #get directors for na values
 def get_director(movie_name):
@@ -90,7 +97,7 @@ def correlation(df, col_name):
     # Get the correlation between the features
     corr = df.corr()
     # Top 0% Correlation training features with the Value
-    top_feature = corr.index[abs(corr[col_name]) > 0.1]
+    top_feature = corr.index[abs(corr[col_name]) > 0.23]
     # Correlation plot
     plt.subplots(figsize=(12, 8))
     top_corr = df[top_feature].corr()
@@ -98,6 +105,20 @@ def correlation(df, col_name):
     plt.show()
     return top_feature
 
+
+#apply Multiple linear regression
+def multi_reg(X_train, y_train, X_test, y_test):
+
+    # fit the transformed features to Linear Regression
+    multi_model1 = linear_model.LinearRegression()
+
+    # Using Multiple linear regression
+    multi_model1.fit(X_train, y_train)
+    prediction = multi_model1.predict(X_test)
+
+    print('Mean Square Error of Multiple Linear Regression :',metrics.mean_squared_error(y_test, prediction))
+    print('Accuracy of Multiple Linear Regression : ',r2_score(y_test, prediction))
+    return metrics.mean_squared_error(y_test, prediction)
 
 #apply polynomial regression model
 def poly_reg(degree, X_train, y_train, X_test, y_test):
@@ -110,7 +131,8 @@ def poly_reg(degree, X_train, y_train, X_test, y_test):
     poly_model1.fit(X_train_poly_model_1, y_train)
     prediction = poly_model1.predict(model_1_poly_features.fit_transform(X_test))
 
-    print(f'Mean Square Error of the at degree of polynomial Regression    {metrics.mean_squared_error(y_test, prediction)}')
+    print('Mean Square Error of the at degree {} of polynomial Regression :'.format(degree),metrics.mean_squared_error(y_test, prediction))
+    print('Accuracy of polynomial Regression : ',r2_score(y_test, prediction))
     return metrics.mean_squared_error(y_test, prediction)
 
 
@@ -164,37 +186,64 @@ movies_df["release_date"] = np.where(movies_df["release_date"] >= 37, movies_df[
                                      movies_df['release_date'] + 2000)
 
 movies_df.to_csv('clean_data.csv', index=False)
-#using ordinal encoding
-Rating_dict = {'G': 4, 'PG': 3, 'PG-13': 2, 'R': 1, 'Not Rated': 0}
-movies_df['MPAA_rating'] = movies_df.MPAA_rating.map(Rating_dict)
 
-encodlist = ['genre', 'director']
+#Drop ٍSpecial Rows with values 0
+movies_df.drop(movies_df[movies_df['MPAA_rating'] == 0].index,inplace=True)
+movies_df.drop(movies_df[movies_df['genre'] == 0].index,inplace=True)
+
+#using One_hot_encoding
+encodlist = ['genre', 'director','MPAA_rating']
 movies_df = encoder(movies_df, encodlist)
+#handle realsed date
 handleDate(movies_df)
+
+#featureScaling(movies_df['release_date'], 0, 20)
+
 
 movies_df.to_csv('clean_data.csv', index=False)
 X = movies_df[correlation(movies_df, 'revenue')]
 Y = movies_df['revenue']  # Label
 # print(X['revenue'])
 # print(X.head())
-X.drop('revenue', axis=1, inplace=True)
+X = X.drop('revenue', axis=1, inplace=False)
 # X.drop('revenue',inplace= True)
 print(Y.shape)
 MSE = []
 dgree = []
 
-#for i in range(1, 10):
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True, random_state=11)
+#for i in range(1, 15):
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True, random_state=13)
+    #MSE .append(poly_reg(3, X_train, y_train, X_test, y_test))
 
-print(poly_reg(1, X_train, y_train, X_test, y_test))
-print("---------")
+
+#print(MSE.index(min(MSE))+1)
+multi_reg(X_train, y_train, X_test, y_test)
+poly_reg(3, X_train, y_train, X_test, y_test)
+
 #dgree.append(i)
     #print(dgree[i])
 
-'''plt.xlabel('degree', fontsize=20)
+plt.xlabel('degree', fontsize=20)
 plt.ylabel('random state', fontsize=20)
 plt.plot(dgree, MSE, color='red', linewidth=3)
-plt.show()'''
+plt.show()
+
+for i in X.columns:
+     plt.xlabel(i, fontsize=20)
+     plt.ylabel('revenue', fontsize=20)
+     plt.plot(X[i], Y, color='red', linewidth=3)
+     plt.show()
+
+
+
+
+
+
+
+
+
+
+
 # print(movies_df.columns)
 # print(movies_df.shape)
 # d = pd.read_csv('clean_data.csv')
