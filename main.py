@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
-#from googlesearch import search
+from googlesearch import search
 from sklearn.preprocessing import OneHotEncoder
 import re
 from datetime import datetime
@@ -22,7 +22,7 @@ revenue_df = pd.read_csv('movies-revenue.csv')
 actor_df = pd.read_csv('movie-voice-actors.csv')
 
 
-# one hot encoding for movies genre
+# one hot encoding for movies genre, MPAA_rating & directors names
 def one_hot_encoder(d, columnName):
     y = pd.get_dummies(d[columnName])
     final_df = pd.DataFrame(d.join(y))
@@ -142,7 +142,7 @@ def multi_reg(X_train, y_train, X_test, y_test,random_state):
     acc = r2_score(y_test, prediction)
     print(f'Mean Square Error of Multiple Linear Regression with random state ({random_state}) : {mse}')
     print(f'Accuracy of Multiple Linear Regression : {abs(acc)} ')
-    print(f'Training time of polynomial Regression model : {end_time - start_time}')
+    print(f'Training time of Multiple Linear Regression model : {end_time - start_time}')
     return mse, acc
 
 
@@ -225,7 +225,7 @@ mse, acc = poly_reg(6, X_train, y_train, X_test, y_test,28)
 multi_reg(X_train, y_train, X_test, y_test,28)
 
 
-
+#Plotting relations and draft
 
 # print(max(Acc))
 # print(min(MSE))
