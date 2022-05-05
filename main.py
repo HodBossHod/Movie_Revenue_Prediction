@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
-from googlesearch import search
+#from googlesearch import search
 from sklearn.preprocessing import OneHotEncoder
 import re
 from datetime import datetime
@@ -17,6 +17,8 @@ from sklearn import metrics
 from dateutil.parser import parse
 from sklearn.metrics import r2_score
 import time
+import requests
+from bs4 import BeautifulSoup
 
 revenue_df = pd.read_csv('movies-revenue.csv')
 actor_df = pd.read_csv('movie-voice-actors.csv')
@@ -45,35 +47,56 @@ def handleDate(dr):
 
 
 # get directors for na values
-def get_director(movie_name):
-    query = movie_name + ' director'  # the movie name +'director'
-    link_list = []
-    for j in search(query, tld="co.in", num=1, stop=1, pause=2):
-        link_list.append(j)
+# def get_director(movie_name):
+#     query = movie_name + ' director'  # the movie name +'director'
+#     link_list = []
+#     for j in search(query, tld="co.in", num=1, stop=1, pause=2):
+#         link_list.append(j)
+#
+#     if len(link_list) != 0:
+#         link_comp = link_list[0].split('/')
+#         director = link_comp[-1]  # the director name
+#         director = str(director)
+#         if len(director) <= 43:
+#             while '-' in director:
+#                 director = director.replace('-', ' ')
+#             while '_' in director:
+#                 director = director.replace('_', ' ')
+#             if str(movie_name).lower() in director.lower():
+#                 return ''
+#             director = re.sub("\(.*\)", '', director)
+#             if 'film director'.lower() in director.lower():
+#                 director = director.replace('film director', '')
+#             if re.compile(r"\d+").search(director):
+#                 return ''
+#
+#             print(movie_name + ' : ' + str(director))
+#             return director
+#         else:
+#             return ''
+#     else:
+#         return ''
+def get_director(moive):
+    moive = moive.replace(" ", "_")
+    URL1 = f'https://disney.fandom.com/wiki/{moive}'
+    URL2 = f'https://www.rottentomatoes.com/m/{moive}'
+    URL3 = f'https://en.wikipedia.org/wiki/{moive}'
 
-    if len(link_list) != 0:
-        link_comp = link_list[0].split('/')
-        director = link_comp[-1]  # the director name
-        director = str(director)
-        if len(director) <= 43:
-            while '-' in director:
-                director = director.replace('-', ' ')
-            while '_' in director:
-                director = director.replace('_', ' ')
-            if str(movie_name).lower() in director.lower():
-                return ''
-            director = re.sub("\(.*\)", '', director)
-            if 'film director'.lower() in director.lower():
-                director = director.replace('film director', '')
-            if re.compile(r"\d+").search(director):
-                return ''
+    URL_list = [URL1,URL2,URL3]
+    URL_info = [['Directed by',0],['Director:',1],['Directed by',0]]
+    new_moive = ""
 
-            print(movie_name + ' : ' + str(director))
-            return director
-        else:
-            return ''
-    else:
-        return ''
+    for index in range(len(URL_list)):
+        try:
+            response = requests.get(URL_list[index])
+            soup = BeautifulSoup(response.text, 'html.parser')
+            new_moive = str((soup.find(text=URL_info[index][0]).findNext().contents[URL_info[index][1]]).text)
+            index += 1
+            break
+        except:
+            True
+
+    return new_moive
 
 
 # create a dictionary for directors (keys:movietitle, values:directors names)
@@ -141,13 +164,13 @@ def multi_reg(X_train, y_train, X_test, y_test,random_state):
     mse = metrics.mean_squared_error(y_test, prediction)
     acc = r2_score(y_test, prediction)
     print(f'Mean Square Error of Multiple Linear Regression with random state ({random_state}) : {mse}')
-    print(f'Accuracy of Multiple Linear Regression : {abs(acc)} ')
+    print(f'Accuracy of Multiple Linear Regression : {acc} ')
     print(f'Training time of Multiple Linear Regression model : {end_time - start_time}')
     return mse, acc
 
 
 # merging tables
-# director_df = fill_new_director()
+#director_df = fill_new_director()
 print(revenue_df.shape)
 director_df = pd.read_csv('new_directors.csv')
 print(director_df.shape)
@@ -176,6 +199,7 @@ print(is_animation_df.shape)
 movies_df = pd.merge(rev_dir_df, is_animation_df, how='inner', on='movie_title')
 movies_df.drop_duplicates(inplace=True)
 print(movies_df.shape)
+movies_df.dropna=[]
 movies_df.fillna(0, inplace=True)
 # merging ended
 
