@@ -77,28 +77,32 @@ def handleDate(dr):
 #             return ''
 #     else:
 #         return ''
-def get_director(moive):
-    moive = moive.replace(" ", "_")
-    URL1 = f'https://disney.fandom.com/wiki/{moive}'
-    URL2 = f'https://www.rottentomatoes.com/m/{moive}'
-    URL3 = f'https://en.wikipedia.org/wiki/{moive}'
 
-    URL_list = [URL1, URL2, URL3]
-    URL_info = [['Directed by', 0], ['Director:', 1], ['Directed by', 0]]
+def get_director(moive):
+    moive1 = moive.replace(" ", "+") + '+movie'
+    moive2 = moive.replace(" ", "_")
+
+    URL1 = f'https://www.google.com/search?q={moive1}&hl=en'
+    URL2 = URL1
+    URL3 = f'https://www.rottentomatoes.com/m/{moive2}'
+    URL4 = f'https://disney.fandom.com/wiki/{moive2}'
+
+
+    URL_list = [URL1,URL2,URL3,URL4]
+    URL_info = ['Director','Directors','Director:','Directed by']
+
     new_moive = ""
 
     for index in range(len(URL_list)):
         try:
             response = requests.get(URL_list[index])
             soup = BeautifulSoup(response.text, 'html.parser')
-            new_moive = str((soup.find(text=URL_info[index][0]).findNext().contents[URL_info[index][1]]).text)
-            index += 1
+            new_moive = str((soup.find(text=URL_info[index]).find_next('a').text))
             break
         except:
             True
 
     return new_moive
-
 
 # create a dictionary for directors (keys:movietitle, values:directors names)
 def fill_new_director():
