@@ -86,13 +86,9 @@ def get_director(moive):
     URL2 = URL1
     URL3 = f'https://www.rottentomatoes.com/m/{moive2}'
     URL4 = f'https://disney.fandom.com/wiki/{moive2}'
-
-
-    URL_list = [URL1,URL2,URL3,URL4]
-    URL_info = ['Director','Directors','Director:','Directed by']
-
+    URL_list = [URL1, URL2, URL3, URL4]
+    URL_info = ['Director', 'Directors', 'Director:', 'Directed by']
     new_moive = ""
-
     for index in range(len(URL_list)):
         try:
             response = requests.get(URL_list[index])
@@ -101,8 +97,8 @@ def get_director(moive):
             break
         except:
             True
-
     return new_moive
+
 
 # create a dictionary for directors (keys:movietitle, values:directors names)
 def fill_new_director():
@@ -125,7 +121,7 @@ def correlation(df, col_name):
     # Get the correlation between the features
     corr = df.corr()
     # Top 0% Correlation training features with the Value
-    top_feature = corr.index[abs(corr[col_name]) >= 0.29]
+    top_feature = corr.index[abs(corr[col_name]) >= 0.2]
     # Correlation plot
     plt.subplots(figsize=(12, 8))
     top_corr = df[top_feature].corr()
@@ -209,8 +205,6 @@ movies_df.fillna(0, inplace=True)
 movies_df.drop(movies_df[movies_df.revenue == 0].index, inplace=True)
 movies_df.to_csv('clean_data.csv', index=False)
 # merging ended
-
-
 # removing the dollar sign from movies_df columns
 movies_df = movies_df.apply(lambda x: x.str.strip('$') if x.name == "revenue" else x)
 # removing the comma from the numeric columns
@@ -228,21 +222,23 @@ movies_df["release_date"] = np.where(movies_df["release_date"] >= 37, movies_df[
 # Using One_Hot_Encoding
 encodlist = ['genre', 'director', 'MPAA_rating', 'voice-actor']
 movies_df = one_hot_encoder(movies_df, encodlist)
+for colm in encodlist:
+    movies_df.drop(f'{colm}_0', axis=1, inplace=True)
 # movies_df.to_csv('clean_data.csv', index=False)
 X = movies_df[correlation(movies_df, 'revenue')]
 Y = movies_df['revenue']  # Label
 X = X.drop('revenue', axis=1, inplace=False)
 print(Y.shape)
-# MSE = []
-# Acc = []
-# dgree = []
-
+MSE = []
+Acc = []
+dgree = []
+# for i in range(2,15):
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True, random_state=20)
-mse, acc = poly_reg(4, X_train, y_train, X_test, y_test, 20)
+mse, acc = poly_reg(2, X_train, y_train, X_test, y_test, 47)
 # MSE.append(mse)
 # Acc.append(acc)
 # dgree.append(i)
-
+#
 # plt.xlabel('Random State', fontsize=20)
 # plt.ylabel('MSE', fontsize=20)
 # plt.plot(dgree, MSE, color='red', linewidth=3)
