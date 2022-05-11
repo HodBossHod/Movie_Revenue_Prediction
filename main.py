@@ -36,14 +36,9 @@ def one_hot_encoder(d, columnName):
 # modify the date format
 def handleDate(dr):
     editDate = []
-    date = dr['release_date']
     now = datetime.now().year
-    for i in date:
-        editDate.append(datetime.strptime(i, '%dd-%mmm-%yy'))
-    print(editDate)
-
-    dr['release_date'] = pd.DataFrame(editDate)
-
+    for i in dr:
+        editDate.append(now -i)
     return pd.DataFrame(editDate)
 
 
@@ -121,7 +116,7 @@ def correlation(df, col_name):
     # Get the correlation between the features
     corr = df.corr()
     # Top 0% Correlation training features with the Value
-    top_feature = corr.index[abs(corr[col_name]) >= 0.2]
+    top_feature = corr.index[abs(corr[col_name]) >= 0.17]
     # Correlation plot
     plt.subplots(figsize=(12, 8))
     top_corr = df[top_feature].corr()
@@ -233,8 +228,8 @@ MSE = []
 Acc = []
 dgree = []
 # for i in range(2,15):
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True, random_state=20)
-mse, acc = poly_reg(2, X_train, y_train, X_test, y_test, 47)
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.23, shuffle=True, random_state=20)
+mse, acc = poly_reg(2, X_train, y_train, X_test, y_test, 20)
 # MSE.append(mse)
 # Acc.append(acc)
 # dgree.append(i)
