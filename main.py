@@ -1,10 +1,12 @@
-import numpy
+from matplotlib import style
 from sklearn import preprocessing
 import pandas as pd
 import numpy as np
+from colorama import Fore, Style
 from sklearn import linear_model
 from sklearn import metrics
 from dateutil import parser
+from sklearn import svm
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures
@@ -12,18 +14,25 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 # from googlesearch import search
 from sklearn.preprocessing import OneHotEncoder
-import re
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.tree import DecisionTreeClassifier
 from datetime import datetime
+from sklearn.svm import SVC
+from sklearn.multiclass import OneVsOneClassifier
 from sklearn import metrics
+from sklearn import tree
 from dateutil.parser import parse
 from sklearn.metrics import r2_score
 import time
 import requests
 from bs4 import BeautifulSoup
-
+from yaml import ScalarEvent
+import pickle
 revenue_df = pd.read_csv('movies-revenue.csv')
 actor_df = pd.read_csv('movie-voice-actors.csv')
-
+director_df = pd.read_csv('new_directors.csv')
+movie_success_df = pd.read_csv('movies-revenue-classification.csv')
 
 # one hot encoding for movies genre, MPAA_rating & directors names
 def one_hot_encoder(d, columnName):
@@ -32,6 +41,9 @@ def one_hot_encoder(d, columnName):
     final_df.drop(columnName, axis=1, inplace=True)
     return final_df
 
+def ordinalEncoder(df, column_name, ordinal_list):
+    encoded_column = df[column_name].replace(ordinal_list)
+    return encoded_column
 
 # modify the date format
 def handleDate(dr):
@@ -111,12 +123,12 @@ def fill_new_director():
 
 
 # filter features according to correlation
-def correlation(df, col_name):
+def correlation(df, col_name, value):
     # Feature Selection
     # Get the correlation between the features
     corr = df.corr()
     # Top 0% Correlation training features with the Value
-    top_feature = corr.index[abs(corr[col_name]) >= 0.17]
+    top_feature = corr.index[abs(corr[col_name]) >= value]
     # Correlation plot
     plt.subplots(figsize=(12, 8))
     top_corr = df[top_feature].corr()
@@ -140,10 +152,10 @@ def poly_reg(degree, X_train, y_train, X_test, y_test, random_state):
 
     prediction = poly_model1.predict(model_1_poly_features.fit_transform(X_test))
     mse = metrics.mean_squared_error(y_test, prediction)
-    acc = r2_score(y_test, prediction)
+    acc = r2_score(y_test, prediction) * 100
     print(
         f'Mean Square Error of polynomial Regression with degree of ({degree}) and random state ({random_state}) : {mse}')
-    print(f'Accuracy of polynomial Regression : {acc}')
+    print(f'Accuracy of polynomial Regression : {acc} %')
     print(f'Training time of polynomial Regression model : {end_time - start_time}')
     return mse, acc
 
@@ -160,9 +172,9 @@ def multi_reg(X_train, y_train, X_test, y_test, random_state):
 
     prediction = multi_model1.predict(X_test)
     mse = metrics.mean_squared_error(y_test, prediction)
-    acc = r2_score(y_test, prediction)
+    acc = r2_score(y_test, prediction) * 100
     print(f'Mean Square Error of Multiple Linear Regression with random state ({random_state}) : {mse}')
-    print(f'Accuracy of Multiple Linear Regression : {acc} ')
+    print(f'Accuracy of Multiple Linear Regression : {acc} %')
     print(f'Training time of Multiple Linear Regression model : {end_time - start_time}')
     return mse, acc
 
@@ -170,13 +182,12 @@ def multi_reg(X_train, y_train, X_test, y_test, random_state):
 # merging tables
 # director_df = fill_new_director()
 print(revenue_df.shape)
-director_df = pd.read_csv('new_directors.csv')
 print(director_df.shape)
 rev_dir_df = pd.merge(revenue_df, director_df, how='inner', on='movie_title')
 rev_dir_df.drop_duplicates(inplace=True)
 print(rev_dir_df.shape)
 rev_dir_df.to_csv('dir.csv', index=False)
-print(rev_dir_df.shape)
+#print(rev_dir_df.shape)
 
 # is_animation_d = {'movie_title': [], 'is_animation': []}
 # movies_list = list(rev_dir_df['movie_title'])
@@ -220,7 +231,7 @@ movies_df = one_hot_encoder(movies_df, encodlist)
 for colm in encodlist:
     movies_df.drop(f'{colm}_0', axis=1, inplace=True)
 # movies_df.to_csv('clean_data.csv', index=False)
-X = movies_df[correlation(movies_df, 'revenue')]
+X = movies_df[correlation(movies_df, 'revenue', 0.17)]
 Y = movies_df['revenue']  # Label
 X = X.drop('revenue', axis=1, inplace=False)
 print(Y.shape)
@@ -241,3 +252,58 @@ mse, acc = poly_reg(2, X_train, y_train, X_test, y_test, 20)
 
 multi_reg(X_train, y_train, X_test, y_test, 28)
 movies_df.to_csv('clean_data.csv', index=False)
+
+
+
+# ------------------------------------------------------------------ Classification ------------------------------------------------------------------
+success_encode_list = {"S":4, "A":3, "B":2, "C":1, "D":0}
+
+print(f"\t\t\t\t\t\t\t{Fore.CYAN}Classification Starts Here{Style.RESET_ALL}")
+# preparing the dataframe for classification
+movie_success_df.drop(columns=["release_date", "genre", "MPAA_rating"], inplace=True)
+movie_success_df["MovieSuccessLevel"] = ordinalEncoder(movie_success_df, "MovieSuccessLevel", success_encode_list)
+movie_success_df = pd.merge(movie_success_df, movies_df, how="outer", on="movie_title")
+movie_success_df.drop(columns="revenue", inplace=True)
+movie_success_df.to_csv("classification_with_only_ratings.csv", index=False)
+
+X = movie_success_df[correlation(movie_success_df, 'MovieSuccessLevel', 0.12)]
+Y = movie_success_df['MovieSuccessLevel']
+X = X.drop('MovieSuccessLevel', axis=1, inplace=False)
+
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True, random_state=21)
+
+# using boosting with decision trees
+dt = AdaBoostClassifier(DecisionTreeClassifier(max_depth=4),algorithm="SAMME.R",n_estimators=100)
+scaler = StandardScaler()
+scaler.fit(X_train)
+
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+
+dt.fit(X_train,y_train)
+y_prediction = dt.predict(X_test)
+accuracy = np.mean(y_prediction == y_test) * 100
+print(f"Adaboost decision tree accuracy: {accuracy} %")
+
+# using one vs one classifier
+svm_kernel_ovo = OneVsOneClassifier(SVC(kernel='linear', C=0.5)).fit(X_train, y_train)
+accuracy = svm_kernel_ovo.score(X_test, y_test) * 100
+print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} %')
+
+# using rbf classifier
+rbf_svc = svm.SVC(kernel='rbf', gamma=1, C=1).fit(X_train, y_train)
+predictions = rbf_svc.predict(X_test)
+accuracy = np.mean(predictions == y_test) * 100
+print(f"RBF SVM accuracy: {accuracy} %")
+
+# # using linear classifier
+# svc = svm.SVC(kernel='linear', C=1).fit(X_train, y_train)
+# predictions = svc.predict(X_test)
+# accuracy = np.mean(predictions == y_test) * 100
+# print(f"linear SVM accuracy: {accuracy} %")
+
+#svc = svm.SVC(kernel='linear', C=C).fit(X_train, y_train)
+#for i, clf in enumerate((svc, rbf_svc)):
+#    predictions = clf.predict(X_test)
+#    accuracy = np.mean(predictions == y_test)
+#    print(accuracy)
