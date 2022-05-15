@@ -34,6 +34,16 @@ actor_df = pd.read_csv('movie-voice-actors.csv')
 director_df = pd.read_csv('new_directors.csv')
 movie_success_df = pd.read_csv('movies-revenue-classification.csv')
 
+
+# What's left to do:
+# Feature Scaling on Release Date--->Remove Handle Date Function and make the range from 0 to 1 Hadi Ehab
+# Rating Column --> Ordinal Encoding Hadi Ehab
+# Handling missing values for important features (Release date-MPAA_Rating) --> Hadi Atef
+# movies before 1980 --> G Hadi Ehab
+# Test Script Hadi Ahmed
+
+
+
 # one hot encoding for movies genre, MPAA_rating & directors names
 def one_hot_encoder(d, columnName):
     y = pd.get_dummies(d[columnName])
@@ -224,6 +234,16 @@ movies_df['release_date'] = movies_df['release_date'].astype('int32')
 movies_df["release_date"] = np.where(movies_df["release_date"] >= 37, movies_df['release_date'] + 1900,
                                      movies_df['release_date'] + 2000)
 # movies_df.to_csv('clean_data.csv', index=False)
+
+n = pd.read_csv('final.csv')
+n = n.apply(
+    lambda x: x.replace('((\d\d-...-)|(\d-...-))', '', regex=True) if x.name == "release_date" else x)
+n['release_date'] = n['release_date'].astype('int32')
+n["release_date"] = np.where(n["release_date"] >= 37, n['release_date'] + 1900,
+                                     n['release_date'] + 2000)
+
+n.to_csv('final.csv')
+
 
 # Using One_Hot_Encoding
 encodlist = ['genre', 'director', 'MPAA_rating', 'voice-actor']
