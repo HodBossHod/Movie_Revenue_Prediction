@@ -1,506 +1,506 @@
-,Unnamed: 0,movie_title,release_date,genre,MPAA_rating,revenue,director,is_animation
-0,0,Recess: School's Out,2001,Comedy,G,54656124,Chuck Sheetz,0
-1,1,D2: The Mighty Ducks,1994,Comedy,PG,94226333,Sam Weisman,0
-2,2,Home on the Range,2004,Comedy,PG,67910166,,1
-3,3,Young Black Stallion,2003,Adventure,G,9254344,Simon Wincer,0
-4,4,What's Love Got to Do With It,1993,Drama,R,79618610,Brian Gibson,0
-5,5,Lady and the Tramp,1955,Drama,G,1236035515,,1
-6,6,Corky Romano,2001,Comedy,PG-13,35705805, rob pritts,0
-7,7,The Waterboy,1998,Comedy,PG-13,288691833,Frank Coraci,0
-8,8,Captain America: The Winter Soldier,2014,Action,PG-13,268013076,,0
-9,9,Pirates of the Caribbean: Dead Man’…,2006,Adventure,PG-13,544817142,,0
-10,10,Ladder 49,2004,Action,PG-13,101161045,,0
-11,11,Coyote Ugly,2000,Drama,PG-13,95070168,David McNally,0
-12,12,The Sixth Man,1997,Comedy,PG-13,27117599,Randall Miller,0
-13,13,Dick Tracy,1990,Action,PG,207231621,Warren Beatty,0
-14,14,Sister Act 2 Back in the Habit,1993,Comedy,PG,116965668,Bill Duke,0
-15,15,DuckTales: The Movie - Treasure of th…,1990,Adventure,G,36107823,,0
-16,16,Blame it on the Bellboy,1992,Comedy,PG-13,5872667,Mark Herman,0
-17,17,The Hunchback of Notre Dame,1996,Adventure,G,190988799,,1
-18,18,Ernest Goes to Jail,1990,Comedy,PG,49999822,,0
-19,19,Ant-Man,2015,Action,PG-13,180202163,Peyton Reed,0
-20,20,The Shaggy Dog,2006,Comedy,PG,78667428,Brian Robbins,0
-21,21,The Life Aquatic with Steve Zissou,2004,Comedy,R,32198655,,0
-22,22,Bridge to Terabithia,2007,Drama,PG,100760721,,0
-23,23,Beauty and the Beast,1991,Musical,G,363017667,Bill Condon,1
-24,24,Miami Rhapsody,1995,Romantic Comedy,PG-13,9857435,David Frankel,0
-25,25,A Bug's Life,1998,Adventure,G,288981698,,0
-26,26,3 Men and a Little Lady,1990,Comedy,PG,143108869,Emile Ardolino,0
-27,27,The Puppet Masters,1994,Horror,R,17727017,stuart orme,0
-28,28,Signs,2002,Thriller/Suspense,PG-13,330754439,M. Night Shyamalan,0
-29,29,Dead Presidents,1995,Drama,R,46741467,,0
-30,30,McFarland USA,2015,Drama,PG,44480275,Niki Caro,0
-31,31,George Of The Jungle,1997,Comedy,PG,193326632,Sam Weisman,0
-32,32,Bound by Honor,1993,,R,9156084,Taylor Hackford,0
-33,33,The Avengers,2012,Action,PG-13,660081224,,0
-34,34,Ten Things I Hate About You,1999,Romantic Comedy,PG-13,63354375,Gil Junger,0
-35,35,Earth,2009,Documentary,G,35981010,Deepa Mehta,0
-36,36,Hello Again,1987,Comedy,,44024529,,0
-37,37,When a Man Loves a Woman,1994,Drama,R,103354194,Luis Mandoki,0
-38,38,Unbreakable,2000,Thriller/Suspense,PG-13,148208901,M. Night Shyamalan,0
-39,39,3 Men and a Baby,1987,Comedy,PG,353334607,Leonard Nimoy,0
-40,40,X Games 3D: The Movie,2009,Documentary,PG,1563976,Steve Lawrence,0
-41,41,Cars 2,2011,Adventure,G,203522177,John Lasseter,0
-42,42,The Princess Diaries 2: Royal Engagement,2004,Romantic Comedy,G,129164207,Garry Marshall,0
-43,43,The Jungle Book 2,2003,Adventure,G,66966883,,0
-44,44,Aspen Extreme,1993,Romantic Comedy,PG-13,15970955,Patrick Hasburgh,0
-45,45,Noises Off...,1992,Comedy,PG-13,4631720,Peter Bogdanovich,0
-46,46,He Got Game,1998,Drama,R,38766948,Spike Lee,0
-47,47,Bringing Down the House,2003,Comedy,PG-13,185481530,Adam Shankman,0
-48,48,Bon Voyage!,1962,Comedy,Not Rated,109581646,Jean Paul Rappeneau,0
-49,49,Doctor Strange,2016,Adventure,PG-13,232532923,Scott Derrickson,0
-50,50,Flubber,1997,Comedy,PG,170406423,Les Mayfield,0
-51,51,Roving Mars,2006,Documentary,G,12948025,George Butler,0
-52,52,Captain Ron,1992,Comedy,PG-13,45741576,,0
-53,53,Shadow Conspiracy,1997,Thriller/Suspense,R,3957025,,0
-54,54,Good Morning Vietnam,1987,Comedy,R,254414837,Barry Levinson,0
-55,55,Babes in Toyland,1961,Musical,G,124841160,Clive Donner,0
-56,56,An Innocent Man,1989,Drama,R,40983414,Peter Yates,0
-57,57,Summer of Sam,1999,Drama,R,32007656,Spike Lee,0
-58,58,The Good Dinosaur,2015,Adventure,PG,123087120,,0
-59,59,Angels in the Outfield,1994,Comedy,PG,103798152,William Dear,0
-60,60,Tough Guys,1986,Comedy,,48758184,,0
-61,61,Something Wicked This Way Comes,1983,Horror,,15136765,,0
-62,62,The Rocketeer,1991,Action,PG,93256673,Joe Johnston,0
-63,63,Stakeout,1987,Comedy,R,141592160,John Badham,0
-64,64,National Treasure 2: Book of Secrets,2007,Adventure,PG,267003525,Jon Turteltaub,0
-65,65,Terminal Velocity,1994,Action,PG-13,34048315,Deran Sarafian,0
-66,66,Apocalypto,2006,Adventure,R,64959548,Mel Gibson,0
-67,67,Invincible,2006,Drama,PG,74398864,Ericson Core,0
-68,68,25th Hour,2002,Drama,R,18325463,Spike Lee,0
-69,69,Mighty Joe Young,1998,Adventure,PG,87906042,Ron Underwood,0
-70,70,Deceived,1991,Thriller/Suspense,PG-13,57544453,,0
-71,71,Never Cry Wolf,1983,Drama,,70669955,Carroll Ballard,0
-72,72,G-Force,2009,Adventure,PG,134246932,,0
-73,73,Feast of July,1995,Drama,R,568342,Christopher Menaul,0
-74,74,The Lookout,2007,Drama,R,5637048,Scott Frank,0
-75,75,Cool Runnings,1993,Comedy,PG,140392731,Jon Turteltaub,0
-76,76,Alice Through the Looking Glass,2016,Adventure,PG,77042381,James Bobin,0
-77,77,The Devil and Max Devlin,1981,,,48517980,Steven Hilliard Stern,0
-78,78,The Chronicles of Narnia: Prince Caspian,2008,Adventure,PG,166277038,Andrew Adamson,0
-79,79,The Insider,1999,Drama,R,47794214,Michael Mann,0
-80,80,Camp Nowhere,1994,Comedy,PG,21576332,Jonathan Prince,0
-81,81,The Rock,1996,Action,R,255702705,,0
-82,82,Green Card,1990,Romantic Comedy,PG-13,59679131,Peter Weir,0
-83,83,Real Steel,2011,Action,PG-13,90848019,Shawn Levy,0
-84,84,A Kid in King Arthur's Court,1995,Adventure,PG,25981285,,0
-85,85,The Last Flight of Noah’s Ark,1980,,,34472116,Charles Jarrott,0
-86,86,African Cats,2011,Documentary,G,16401551,,0
-87,87,Toy Story 3D Double Feature,2009,Adventure,G,34509545,John Lasseter,0
-88,88,Into the Woods,2014,Musical,PG,130894237,Rob Marshall,0
-89,89,Finding Nemo,2003,Adventure,G,518148559,Andrew Stanton,0
-90,90,The Good Mother,1988,Drama,,9772655,Leonard Nimoy,0
-91,91,The Hundred-Foot Journey,2014,Romantic Comedy,PG,55961409,,0
-92,92,Pearl Harbor,2001,Action,PG-13,295705112,Michael Bay,0
-93,93,Pirates of the Caribbean: At World’…,2007,Adventure,PG-13,379129960,Gore Verbinski,0
-94,94,Color of Night,1994,Thriller/Suspense,R,40804816,Richard Rush,0
-95,95,Romy and Michele's High School Reunion,1997,Comedy,R,53693680,David Mirkin,0
-96,96,Cheetah,1989,Adventure,,16653473,,0
-97,97,Jack,1996,Drama,PG-13,111792852,,0
-98,98,Monsters University,2013,Adventure,G,278395641,Dan Scanlon,0
-99,99,The Fifth Estate,2013,Drama,R,3374251,Bill Condon,0
-100,100,Before and After,1996,Drama,PG-13,16482589,Barbet Schroeder,0
-101,101,Moonlight Mile,2002,Drama,PG-13,9909094,Brad Silberling,0
-102,102,A Stranger Among Us,1992,Drama,PG-13,24950752,Sidney Lumet,0
-103,103,The Lizzie McGuire Movie,2003,Comedy,PG,59743191,Jim Fall,0
-104,104,Krippendorf's Tribe,1998,Comedy,PG-13,13608633,Todd Holland,0
-105,105,crazy/beautiful,2001,Drama,PG-13,25214223,John Stockwell,0
-106,106,Adventures in Babysitting,1987,Comedy,,72853569,Chris Columbus,0
-107,107,The Game Plan,2007,Comedy,PG,111010758,Andy Fickman,0
-108,108,Splash,1984,Comedy,PG,157057661,Ron Howard,0
-109,109,Who Framed Roger Rabbit?,1988,Comedy,PG,316250084,Who Framed Roger Rabbit,0
-110,110,The Light Between Oceans,2016,Drama,PG-13,12545979,Derek Cianfrance,0
-111,111,The Guardian,2006,Action,PG-13,70801353,,0
-112,112,The Sword in the Stone,1963,Adventure,,153870834,,1
-113,113,Mr. Holland's Opus,1995,Drama,PG,157508868,Stephen Herek,0
-114,114,The Rescuers Down Under,1990,Adventure,G,55796728,Mike Gabriel,1
-115,115,The Preacher's Wife,1996,Drama,PG,91076877,Penny Marshall,0
-116,116,Sarafina!,1992,Drama,PG-13,14841352,Darrell Roodt,0
-117,117,Trenchcoat,1983,Comedy,,11519089,,0
-118,118,Confessions of a Teenage Drama Queen,2004,Comedy,PG,39816568,Sara Sugarman,0
-119,119,Around the World in 80 Days,2004,Adventure,PG,32585356,,0
-120,120,Blaze,1989,Drama,R,39884640,,0
-121,121,Toy Story,1995,Adventure,G,370409631,John Lasseter,0
-122,122,Prince of Persia: Sands of Time,2010,Action,PG-13,96971361,Mike Newell,0
-123,123,Eddie,1996,Comedy,PG-13,59828966,,0
-124,124,White Fang 2: Myth of the White Wolf,1994,Adventure,PG,18083994,Ken Olin,0
-125,125,White Squall,1996,Adventure,PG-13,19509726,Ridley Scott,0
-126,126,The Invisible,2007,Thriller/Suspense,PG-13,25202168,Leigh Whannell,0
-127,127,Guilty as Sin,1993,Thriller/Suspense,R,46064723,Sidney Lumet,0
-128,128,Operation Dumbo Drop,1995,Adventure,PG,47809421,Simon Wincer,0
-129,129,Ghosts of the Abyss,2003,Documentary,G,23803108,James Cameron,0
-130,130,Scenes from a Mall,1991,Comedy,,19149495,Paul Mazursky,0
-131,131,The BFG,2016,Adventure,PG,55483770,Steven Spielberg,0
-132,132,Tron,1982,Action,,77184895,Joseph Kosinski,0
-133,133,Firelight,1998,Drama,R,1409943,William Nicholson,0
-134,134,Delivery Man,2013,Comedy,PG-13,31787136,Ken Scott,0
-135,135,New York Stories,1989,Drama,PG,22740861,,0
-136,136,Disorganized Crime,1989,Comedy,,15233465,Jim Kouf,0
-137,137,Tom and Huck,1995,Adventure,PG,45911517,Peter Hewitt,0
-138,138,Keeping the Faith,2000,Romantic Comedy,PG-13,57925202,Edward Norton,0
-139,139,Grosse Pointe Blank,1997,Black Comedy,R,51579764,,0
-140,140,Indian Summer,1993,Comedy,R,29968953,Mike Binder,0
-141,141,The Princess and the Frog,2009,Adventure,G,116316457,,1
-142,142,Billy Bathgate,1991,Drama,R,31167691,Robert Benton,0
-143,143,3 Ninjas Kick Back,1994,Action,PG,24267154,,0
-144,144,My Boyfriend's Back,1993,,PG-13,6554384,Bob Balaban,0
-145,145,Goal! The Dream Begins,2006,Drama,PG,5512647,Danny Cannon,0
-146,146,Country,1984,Drama,,21075000,,0
-147,147,Big Trouble,2002,Comedy,PG-13,10537188,Barry Sonnenfeld,0
-148,148,People Like Us,2012,Drama,PG-13,13165822,Alex Kurtzman,0
-149,149,Mars Needs Moms,2011,Adventure,PG,22741603,Simon Wells,0
-150,150,Angie,1994,Comedy,R,19116981,Martha Coolidge,0
-151,151,Deuce Bigalow: Male Gigolo,1999,Comedy,R,106921374,,0
-152,152,Veronica Guerin,2003,Drama,R,2194759,Joel Schumacher,0
-153,153,Max Keeble's Big Move,2001,Comedy,PG,25749730,Tim Hill,0
-154,154,The Scarlet Letter,1995,Drama,R,20075033,,0
-155,155,D3: The Mighty Ducks,1996,Comedy,PG,43713554,Robert Lieberman,0
-156,156,Up,2009,Adventure,PG,329336681,Pete Docter,0
-157,157,Alive,1993,Adventure,R,73914543,cho il hyung,0
-158,158,Can't Buy Me Love,1987,Romantic Comedy,,68181300,,0
-159,159,The Hoax,2007,Drama,R,8779196,,0
-160,160,Fantasia,1940,Musical,G,2187090808,,1
-161,161,Crimson Tide,1995,Action,R,177102077,Tony Scott,0
-162,162,Ransom,1996,Action,R,259807820,Ron Howard,0
-163,163,Pretty Woman,1990,Romantic Comedy,R,356389765,Garry Marshall,0
-164,164,Inspector Gadget,1999,Comedy,PG,161610341,,0
-165,165,Winnie the Pooh,2011,Adventure,G,28375869,,0
-166,166,The Tigger Movie,2000,Adventure,G,71228678,,0
-167,167,Heavy Weights,1995,Comedy,PG,34245779,Steven Brill,0
-168,168,What About Bob?,1991,Comedy,PG,127571325,Frank Oz,0
-169,169,Condorman,1981,Action,,0,Charles Jarrott,0
-170,170,The Haunted Mansion,2003,Comedy,PG,105775678,Rob Minkoff,0
-171,171,The Hitchhiker's Guide to the Galaxy,2005,Comedy,PG,67096891,Garth Jennings,0
-172,172,Bedknobs and Broomsticks,1971,Musical,,91305448,Robert Stevenson,1
-173,173,Pooh's Heffalump Movie,2005,Adventure,G,23801835,,1
-174,174,Open Range,2003,Western,R,81547672,Kevin Costner,0
-175,175,D.O.A.,1988,Thriller/Suspense,,26062188,,0
-176,176,Meet the Deedles,1998,Comedy,PG,7829877,Steve Boyum,0
-177,177,A Beautiful Planet,2016,Documentary,G,7895708,Toni Myers,0
-178,178,Sister Act,1992,Comedy,PG,283583472,Emile Ardolino,0
-179,179,Strange Magic,2015,Adventure,PG,12429583,Gary Rydstrom,0
-180,180,The Many Adventures of Winnie the Pooh,1977,,,0,,0
-181,181,Quiz Show,1994,Drama,PG-13,50840394,Robert Redford,0
-182,182,While You Were Sleeping,1995,Romantic Comedy,PG,157082900,,0
-183,183,Bedtime Stories,2008,Comedy,PG,128039679,Adam Shankman,0
-184,184,The Chronicles of Narnia: The Lion t…,2005,Adventure,PG,381557539,,0
-185,185,Instinct,1999,Drama,R,56595842,Halina Reijn,0
-186,186,Step Up,2006,Drama,PG-13,84078780,Anne Fletcher,0
-187,187,G.I. Jane,1997,Drama,R,88467531,Ridley Scott,0
-188,188,Oscar,1991,Comedy,PG,47181395,Academy Award for Best Director,0
-189,189,The Parent Trap,1998,Comedy,PG,119185667,,0
-190,190,Primeval,2007,Adventure,R,12985302,,0
-191,191,The Lone Ranger,2013,Western,PG-13,92597388,Gore Verbinski,0
-192,192,Monsters Inc.,2001,Adventure,G,416073179,Pete Docter,0
-193,193,Reign of Fire,2002,Action,PG-13,62480631,Rob Bowman,0
-194,194,Running Brave,1983,Drama,,3223725,,0
-195,195,Dinosaur,2000,Adventure,PG,215438985,,1
-196,196,Rushmore,1998,Black Comedy,R,28392518,,0
-197,197,Freaky Friday,1977,Comedy,,98067733,Mark Waters,0
-198,198,The 13th Warrior,1999,Action,R,54262148,John McTiernan,0
-199,199,Brave,2012,Adventure,PG,251292441,,0
-200,200,Eight Below,2006,Adventure,PG,105037235,Frank Marshall,0
-201,201,Gake no ue no Ponyo,2009,Adventure,G,16961607,,0
-202,202,Queen of Katwe,2016,Drama,PG,8874389,Mira Nair,0
-203,203,Straight Talk,1992,Comedy,PG,43068356,,0
-204,204,Holy Man,1998,Comedy,PG,21694605,Stephen Herek,0
-205,205,The Sorcerer's Apprentice,2010,Adventure,PG,67473105,Jon Turteltaub,0
-206,206,Stella,1990,Drama,PG-13,40077147,,0
-207,207,An American Werewolf in Paris,1997,Horror,R,48546161,,0
-208,208,The Mighty Ducks,1992,Comedy,PG,103120810,Stephen Herek,0
-209,209,Tall Tale,1995,Western,PG,15983331,Jeremiah S. Chechik,0
-210,210,Tangled,2010,Adventure,PG,214388548,,1
-211,211,Ed Wood,1994,Comedy,R,12042634,,0
-212,212,The Jerky Boys,1995,Comedy,R,14641561,,0
-213,213,The Rich Man's Wife,1996,Thriller/Suspense,R,16284619,Amy Holden Jones,0
-214,214,20000 Leagues Under the Sea,1954,Adventure,,528279994,Richard Fleischer,0
-215,215,Super Mario Bros.,1993,Action,PG,42445058,,0
-216,216,The Proposal,2009,Romantic Comedy,PG-13,184288829,Anne Fletcher,0
-217,217,Race to Witch Mountain,2009,Adventure,PG,75501997,Andy Fickman,0
-218,218,The Adventures of Huck Finn,1993,Adventure,PG,49080505,Stephen Sommers,0
-219,219,Jefferson in Paris,1995,Drama,PG-13,4770461,James Ivory,0
-220,220,The Jungle Book,2016,Adventure,PG,364001123,Jon Favreau,0
-221,221,The Jungle Book,2016,Adventure,PG,364001123,Jon Favreau,0
-222,222,The Jungle Book,2016,Adventure,PG,364001123,Jon Favreau,0
-223,223,The Jungle Book,2016,Adventure,PG,364001123,Jon Favreau,0
-224,224,The Jungle Book,2016,Adventure,PG,364001123,Jon Favreau,0
-225,225,The Jungle Book,2016,Adventure,PG,364001123,Jon Favreau,0
-226,226,The Jungle Book,2016,Adventure,PG,364001123,Jon Favreau,0
-227,227,The Jungle Book,2016,Adventure,PG,364001123,Jon Favreau,0
-228,228,The Jungle Book,1967,Musical,Not Rated,789612346,Jon Favreau,0
-229,229,The Jungle Book,1967,Musical,Not Rated,789612346,Jon Favreau,0
-230,230,The Jungle Book,1967,Musical,Not Rated,789612346,Jon Favreau,0
-231,231,The Jungle Book,1967,Musical,Not Rated,789612346,Jon Favreau,0
-232,232,The Jungle Book,1967,Musical,Not Rated,789612346,Jon Favreau,0
-233,233,The Jungle Book,1967,Musical,Not Rated,789612346,Jon Favreau,0
-234,234,The Jungle Book,1967,Musical,Not Rated,789612346,Jon Favreau,0
-235,235,The Jungle Book,1967,Musical,Not Rated,789612346,Jon Favreau,0
-236,236,Sky High,2005,Adventure,PG,84088854,Mike Mitchell,0
-237,237,Toy Story 2,1999,Adventure,G,404450426,,0
-238,238,The Rescuers,1977,Adventure,,159743914,,1
-239,239,Remember the Titans,2000,Drama,PG,180742479,Boaz Yakin,0
-240,240,A Lot Like Love,2005,Comedy,PG-13,28716947,Nigel Cole,0
-241,241,3 Ninjas,1992,Action,PG,58965304,,0
-242,242,Flight of the Navigator,1986,Adventure,,42183197,Randal Kleiser,0
-243,243,America's Heart and Soul,2004,Documentary,Not Rated,426246,Louie Schwartzberg,0
-244,244,Swing Vote,2008,Comedy,PG-13,19125841,Joshua Michael Stern,0
-245,245,The Straight Story,1999,Drama,G,10111144,David Lynch,0
-246,246,The Kid,2000,Comedy,PG,108993148,Charlie Chaplin,0
-247,247,Enchanted,2007,Romantic Comedy,PG,156074310,Kevin Lima,1
-248,248,Zootopia,2016,Adventure,PG,341268248,,1
-249,249,I'll Be Home For Christmas,1998,Comedy,PG,21941840,,0
-250,250,The War at Home,1996,,R,65543,,0
-251,251,Peter Pan: Return to Neverland,2002,Adventure,G,70269715,Return to Never Land,0
-252,252,Ratatouille,2007,Comedy,G,252955933,Brad Bird,0
-253,253,Secretariat,2010,Drama,PG,63781920,Randall Wallace,0
-254,254,Medicine Man,1992,Drama,PG-13,91304495,John McTiernan,0
-255,255,A Thousand Acres,1997,Drama,R,14561324,Jocelyn Moorhouse,0
-256,256,Mission to Mars,2000,Adventure,PG,95208344,Brian De Palma,0
-257,257,Brother Bear,2003,Adventure,G,119218333,,1
-258,258,Snow White and the Seven Dwarfs,1937,Musical,G,5228953251,,1
-259,259,Toy Story 3,2010,Adventure,G,443408255,Lee Unkrich,0
-260,260,Miracle,2004,Drama,PG,87392478,Gavin O'Connor,0
-261,261,My Favorite Martian,1999,Comedy,PG,61150849,Donald Petrie,0
-262,262,Benji the Hunted,1987,Adventure,,32798382,,0
-263,263,A Far Off Place,1993,Adventure,PG,26248558,Mikael Salomon,0
-264,264,Old Dogs,2009,Comedy,PG,55503929,Walt Becker,0
-265,265,Alice in Wonderland,2010,Adventure,PG,357063499,Tim Burton,1
-266,266,The Little Mermaid,1989,Adventure,G,223726012,,1
-267,267,Stick It,2006,Comedy,PG-13,34634731,Jessica Bendinger,0
-268,268,Funny Bones,1995,Comedy,R,1025425,Peter Chelsom,0
-269,269,Cars,2006,Comedy,G,314140384,John Lasseter,0
-270,270,Bicentennial Man,1999,Drama,PG,94838225,Chris Columbus,0
-271,271,Chimpanzee,2012,Documentary,G,30675725,,0
-272,272,The Apple Dumpling Gang,1975,Comedy,,131246872,,0
-273,273,The Other Sister,1999,Romantic Comedy,PG-13,46145331,Garry Marshall,0
-274,274,A Simple Twist of Fate,1994,Drama,PG-13,7035189,Gillies MacKinnon,0
-275,275,Where the Heart Is,1990,Comedy,,2210321,Matt Williams,0
-276,276,Kaze Tachinu,2013,Drama,PG-13,5367415,Hayao Miyazaki,0
-277,277,Off Beat,1986,Comedy,,11003932,Michael Dinner,0
-278,278,The Greatest Game Ever Played,2005,Drama,PG,20162672,Bill Paxton,0
-279,279,The Three Musketeers,1993,Adventure,PG,109310377,Paul W. S. Anderson,0
-280,280,A Civil Action,1998,Drama,PG-13,94139530,Steven Zaillian,0
-281,281,Walt and El Grupo,2009,Documentary,PG,23064,Theodore Thomas,0
-282,282,Powder,1995,Drama,PG-13,59727216,Victor Salva,0
-283,283,1492: Conquest of Paradise,1992,Adventure,PG-13,14421454,Ridley Scott,0
-284,284,The Cemetery Club,1993,Comedy,PG-13,11369541,Bill Duke,0
-285,285,Stay Alive,2006,Horror,PG-13,29712825,William Brent Bell,0
-286,286,That Darn Cat,1997,Comedy,PG,33613158,Robert Stevenson,0
-287,287,The Muppet Christmas Carol,1992,Comedy,G,55417615,Brian Henson,0
-288,288,Step Up 2 the Streets,2008,Drama,PG-13,68118371,Jon M. Chu,0
-289,289,Fantasia 2000 (Theatrical Release),2000,Musical,G,14238144,,0
-290,290,The Santa Clause 2,2002,Comedy,G,201959095,Michael Lembeck,0
-291,291,The Recruit,2003,Thriller/Suspense,PG-13,73793522,Roger Donaldson,0
-292,292,Money for Nothing,1993,Comedy,R,2127496,,0
-293,293,Bad Company,1995,Thriller/Suspense,R,6829092,Joel Schumacher,0
-294,294,Bad Company,1995,Thriller/Suspense,R,6829092,Joel Schumacher,0
-295,295,Bad Company,1995,Thriller/Suspense,R,6829092,Joel Schumacher,0
-296,296,Bad Company,1995,Thriller/Suspense,R,6829092,Joel Schumacher,0
-297,297,Bad Company,1995,Thriller/Suspense,R,6829092,Joel Schumacher,0
-298,298,Bad Company,1995,Thriller/Suspense,R,6829092,Joel Schumacher,0
-299,299,Bad Company,1995,Thriller/Suspense,R,6829092,Joel Schumacher,0
-300,300,Bad Company,1995,Thriller/Suspense,R,6829092,Joel Schumacher,0
-301,301,Bad Company,2002,Action,PG-13,43756218,Joel Schumacher,0
-302,302,Bad Company,2002,Action,PG-13,43756218,Joel Schumacher,0
-303,303,Bad Company,2002,Action,PG-13,43756218,Joel Schumacher,0
-304,304,Bad Company,2002,Action,PG-13,43756218,Joel Schumacher,0
-305,305,Bad Company,2002,Action,PG-13,43756218,Joel Schumacher,0
-306,306,Bad Company,2002,Action,PG-13,43756218,Joel Schumacher,0
-307,307,Bad Company,2002,Action,PG-13,43756218,Joel Schumacher,0
-308,308,Bad Company,2002,Action,PG-13,43756218,Joel Schumacher,0
-309,309,I Love Trouble,1994,Romantic Comedy,PG,63651027,Charles Shyer,0
-310,310,The Absent Minded Professor,1961,Comedy,,310094574,Robert Stevenson,0
-311,311,Jungle 2 Jungle,1997,Comedy,PG,110058379,John Pasquin,0
-312,312,Tex,1982,Drama,,20643199,,0
-313,313,Life With Mikey,1993,Comedy,PG,25146538,James Lapine,0
-314,314,Gone Fishin',1997,Comedy,PG,36265379,Christopher Cain,0
-315,315,Rogue One: A Star Wars Story,2016,Adventure,PG-13,529483936,Gareth Edwards,0
-316,316,The Marrying Man,1991,Romantic Comedy,R,24939118,,0
-317,317,Bubble Boy,2001,Comedy,PG-13,7450434,blair hayes,0
-318,318,Baby: Secret of the Lost Legend,1985,Adventure,,33900697,bill l norton,0
-319,319,The Fox and the Hound,1981,Comedy,,133118889,,1
-320,320,High Heels and Low Lifes,2001,,R,337782,Mel Smith,0
-321,321,The Tie That Binds,1995,Thriller/Suspense,R,11167895,Wesley Strick,0
-322,322,John Carter,2012,Adventure,PG-13,77372445,Andrew Stanton,0
-323,323,Blank Check,1994,Comedy,PG,63170804,,0
-324,324,Guardians of the Galaxy,2014,Adventure,PG-13,343771168,James Gunn,0
-325,325,Star Wars Ep. VII: The Force Awakens,2015,Adventure,PG-13,936662225,J. J. Abrams,0
-326,326,A Goofy Movie,1995,Comedy,G,68479579,Kevin Lima,1
-327,327,Hocus Pocus,1993,Comedy,PG,80147079,Kenny Ortega,0
-328,328,Pete’s Dragon,2016,Adventure,PG,76233151,David Lowery,0
-329,329,Night Crossing,1982,Drama,,12903059,Delbert Mann,0
-330,330,Lilo & Stitch,2002,Adventure,PG,211506702,,1
-331,331,Metro,1997,Action,R,58804106,Ananda Krishnan,0
-332,332,National Treasure,2004,Adventure,PG,234069353,Jon Turteltaub,0
-333,333,Shanghai Noon,2000,Western,PG-13,89042541,Tom Dey,0
-334,334,Dangerous Minds,1995,Drama,R,164552293,john n smith,0
-335,335,The Distinguished Gentleman,1992,Comedy,R,94349900,Jonathan Lynn,0
-336,336,The Secret World of Arietty,2012,Adventure,G,20325733,Hiromasa Yonebayashi,0
-337,337,The Princess Diaries,2001,Comedy,G,161218928,Garry Marshall,0
-338,338,Step Up 3D,2010,Drama,PG-13,45302137,Jon M. Chu,0
-339,339,Underdog,2007,Adventure,PG,53619462,Frederik Du Chau,0
-340,340,Red Rock West,1994,,R,5170709,John Dahl,0
-341,341,Captain America: Civil War,2016,Action,PG-13,408084349,,0
-342,342,Mr. Wrong,1996,Romantic Comedy,PG-13,24422334,Nick Castle,0
-343,343,Nixon,1995,Drama,R,26302005,Oliver Stone,0
-344,344,The Ref,1994,Comedy,R,23401275,,0
-345,345,The Santa Clause 3: The Escape Clause,2006,Comedy,G,108694869,Michael Lembeck,0
-346,346,Ice Princess,2005,Comedy,G,32064685,Tim Fywell,0
-347,347,King Arthur,2004,Adventure,PG-13,70423706,Antoine Fuqua,0
-348,348,Nothing To Lose,1997,Comedy,R,81692095,Steve Oedekerk,0
-349,349,Herbie: Fully Loaded,2005,Comedy,G,86812798,Angela Robinson,0
-350,350,Father of the Bride,1991,Comedy,PG,179821881,Charles Shyer,0
-351,351,You Again,2010,Comedy,PG,27461121,Andy Fickman,0
-352,352,Treasure Planet,2002,Adventure,PG,55189145,,1
-353,353,The Great Mouse Detective,1986,Adventure,,53637367,,1
-354,354,Cinderella,2015,Drama,PG,201151353,Kay Cannon,1
-355,355,Cinderella,2015,Drama,PG,201151353,Kay Cannon,1
-356,356,Cinderella,2015,Drama,PG,201151353,Kay Cannon,1
-357,357,Cinderella,2015,Drama,PG,201151353,Kay Cannon,1
-358,358,Cinderella,2015,Drama,PG,201151353,Kay Cannon,1
-359,359,Cinderella,2015,Drama,PG,201151353,Kay Cannon,1
-360,360,Cinderella,2015,Drama,PG,201151353,Kay Cannon,1
-361,361,Cinderella,2015,Drama,PG,201151353,Kay Cannon,1
-362,362,Cinderella,1950,Drama,G,920608730,Kay Cannon,1
-363,363,Cinderella,1950,Drama,G,920608730,Kay Cannon,1
-364,364,Cinderella,1950,Drama,G,920608730,Kay Cannon,1
-365,365,Cinderella,1950,Drama,G,920608730,Kay Cannon,1
-366,366,Cinderella,1950,Drama,G,920608730,Kay Cannon,1
-367,367,Cinderella,1950,Drama,G,920608730,Kay Cannon,1
-368,368,Cinderella,1950,Drama,G,920608730,Kay Cannon,1
-369,369,Cinderella,1950,Drama,G,920608730,Kay Cannon,1
-370,370,Frozen,2013,Adventure,PG,414997174,,1
-371,371,Pirates of the Caribbean: On Stranger…,2011,Adventure,PG-13,256263359,Rob Marshall,0
-372,372,Zokkomon,2011,Adventure,PG,2984,satyajit bhatkal,0
-373,373,Gross Anatomy,1989,Drama,PG-13,23972012,,0
-374,374,The Incredibles,2004,Adventure,PG,354488708,Brad Bird,0
-375,375,Frank McKlusky C.I.,2002,,,0,,0
-376,376,Taking Care of Business,1990,Comedy,R,39963460,Arthur Hiller,0
-377,377,Tim Burton's The Nightmare Before Chr…,2006,Musical,PG,30737517,Henry Selick,0
-378,378,Cocktail,1988,Drama,R,160442289,Homi Adajania,0
-379,379,Gun Shy,2000,Comedy,R,2562155,Simon West,0
-380,380,Mr. Destiny,1990,Comedy,PG-13,30722056,,0
-381,381,Herbie Goes to Monte Carlo,1977,,,105847527,Vincent McEveety,0
-382,382,Evita,1996,Musical,PG,92077628,Alan Parker,0
-383,383,Dark Water,2005,Thriller/Suspense,PG-13,33500491,,0
-384,384,Piglet's Big Movie,2003,Comedy,G,32298812,,0
-385,385,Kazaam,1996,Comedy,PG,36009655,Paul Michael Glaser,0
-386,386,Déjà Vu,2006,Thriller/Suspense,PG-13,82267038,Tony Scott,0
-387,387,Waking Sleeping Beauty,2010,Documentary,PG,86264,Don Hahn,0
-388,388,The Count of Monte Cristo,2002,Drama,PG-13,78682079,Kevin Reynolds,0
-389,389,The Program,1993,Action,R,46919256,,0
-390,390,When in Rome,2010,Romantic Comedy,PG-13,34917330,Mark Steven Johnson,0
-391,391,Born Yesterday,1993,Romantic Comedy,PG,36165012,George Cukor,0
-392,392,The Alamo,2004,Western,PG-13,30416359,John Lee Hancock,0
-393,393,Mad Love,1995,Drama,PG-13,29934306,Karl Freund,0
-394,394,Armageddon,1998,Adventure,PG-13,362324957,Michael Bay,0
-395,395,Air Bud,1997,Comedy,PG,45266588,Charles Martin Smith,0
-396,396,Fire Birds,1990,Action,PG-13,29485923,,0
-397,397,The Black Cauldron,1985,Adventure,,50553142,,1
-398,398,Oz the Great and Powerful,2013,Adventure,PG,243434130,Sam Raimi,0
-399,399,Two Much,1996,Romantic Comedy,PG-13,2057055,Fernando Trueba,0
-400,400,102 Dalmatians,2000,Comedy,G,104055039,Kevin Lima,0
-401,401,The Pacifier,2005,Comedy,PG,148619029,Adam Shankman,0
-402,402,Prom,2011,Comedy,PG,10768946,Ryan Murphy,0
-403,403,Un indien dans la ville,1996,Comedy,PG,1963937,,0
-404,404,Annapolis,2006,Drama,PG-13,22044113,Justin Lin,0
-405,405,The Country Bears,2002,Adventure,G,24650121,,1
-406,406,Planes: Fire and Rescue,2014,Adventure,PG,61040349,,0
-407,407,Tin Men,1987,Comedy,,54787202,Barry Levinson,0
-408,408,Renaissance Man,1994,Comedy,PG-13,49945474,Penny Marshall,0
-409,409,Playing God,1997,Thriller/Suspense,R,7652965,,0
-410,410,Phenomenon,1996,Drama,PG,199559799,,0
-411,411,Gnomeo and Juliet,2011,Comedy,G,106270797,Kelly Asbury,0
-412,412,The Color of Money,1986,Drama,R,117957323,Martin Scorsese,0
-413,413,Blackbeard's Ghost,1968,Comedy,,138612686,Robert Stevenson,0
-414,414,Ernest Scared Stupid,1991,Comedy,PG,28320147,,0
-415,415,The Emperor's New Groove,2000,Adventure,G,136789252,Mark Dindal,1
-416,416,Double Take,2001,Action,PG-13,44418589,George Gallo,0
-417,417,Rocket Man,1997,Comedy,PG,28371890,Dexter Fletcher,0
-418,418,Mulan,1998,Adventure,G,216807832,Niki Caro,1
-419,419,Song of the South,1946,Adventure,G,1078510579,,1
-420,420,The Black Hole,1979,,,120377374,gary nelson,0
-421,421,Raising Helen,2004,Comedy,PG-13,50886144,Garry Marshall,0
-422,422,A Gun in Betty Lou's Handbag,1992,,PG-13,7295423,Allan Moyle,0
-423,423,The Air Up There,1994,Comedy,PG,42940186,Paul Michael Glaser,0
-424,424,Roommates,1995,Comedy,PG,23404369,,0
-425,425,Morning Light,2008,Documentary,PG,322979,,0
-426,426,Valiant,2005,Adventure,G,25616292,directors.php,0
-427,427,Down and Out in Beverly Hills,1986,Comedy,R,141183693,Paul Mazursky,0
-428,428,Tarzan,1999,Adventure,G,283900254,,1
-429,429,The Royal Tenenbaums,2001,Black Comedy,R,76758193,,0
-430,430,James and the Giant Peach,1996,Adventure,PG,55159783,Henry Selick,0
-431,431,Mystery Alaska,1999,Comedy,R,14755189,Jay Roach,0
-432,432,Last Dance,1996,Drama,R,11171714,,0
-433,433,My Science Project,1985,Comedy,,9736051,Jonathan Betuel,0
-434,434,Homeward Bound II: Lost in San Franc…,1996,Adventure,G,62384706,David R. Ellis,0
-435,435,The Muppets,2011,Comedy,PG,94189503,James Bobin,0
-436,436,Turner & Hooch,1989,Comedy,PG,150176361,Roger Spottiswoode,0
-437,437,Oceans,2010,Documentary,G,20751600,,0
-438,438,It's Pat,1994,Comedy,,125666,Adam Bernstein,0
-439,439,The Finest Hours,2016,Thriller/Suspense,PG,27569558,Craig Gillespie,0
-440,440,Shoot to Kill,1988,Action,,60097074,Roger Spottiswoode,0
-441,441,Hannah Montana the Movie,2009,Drama,G,89443640,Peter Chelsom,0
-442,442,First Kid,1996,Comedy,PG,50465108,David Mickey Evans,0
-443,443,Consenting Adults,1992,Drama,R,43859823,Alan J. Pakula,0
-444,444,Dan in Real Life,2007,Romantic Comedy,PG-13,58350234,Peter Hedges,0
-445,445,Sorority Boys,2002,Comedy,R,14797862,Wallace Wolodarsky,0
-446,446,Simon Birch,1998,Drama,PG,32809442,Mark Steven Johnson,0
-447,447,In the Army Now,1994,Comedy,PG,59673787,Daniel Petrie Jr.,0
-448,448,Wreck-It Ralph,2012,Adventure,PG,200354959,Rich Moore,1
-449,449,Iron Man 3,2013,Action,PG-13,424084233,Shane Black,0
-450,450,One Magic Christmas,1985,Drama,,31415432,phillip borsos,0
-451,451,Beverly Hills Chihuahua,2008,Comedy,PG,110932022,Raja Gosnell,0
-452,452,WALL-E,2008,Adventure,G,262771918,Andrew Stanton,0
-453,453,Aladdin,1992,Comedy,G,441969178,Guy Ritchie,1
-454,454,Casanova,2005,Drama,R,14574087,,0
-455,455,Thor: The Dark World,2013,Adventure,PG-13,213962184,Alan Taylor,0
-456,456,Monkey Kingdom,2015,Documentary,G,16432322,,0
-457,457,Ernest Saves Christmas,1988,Comedy,PG,57845202,,0
-458,458,Hannah Montana/Miley Cyrus: Best of B…,2008,Concert/Performance,G,76646993,,0
-459,459,Saving Mr. Banks,2013,Drama,PG-13,86249969,John Lee Hancock,0
-460,460,The Aristocats,1970,Musical,G,255161499,,1
-461,461,Calendar Girls,2003,Comedy,PG-13,42379650,Nigel Cole,0
-462,462,Unstrung Heroes,1995,Drama,PG,15365850,Diane Keaton,0
-463,463,Three Fugitives,1989,Comedy,PG-13,85757817,Francis Veber,0
-464,464,Tomorrowland,2015,Adventure,PG,93436322,Brad Bird,0
-465,465,The Village,2004,Thriller/Suspense,PG-13,155021748,M. Night Shyamalan,0
-466,466,Alexander and the Terrible Horrible…,2014,Comedy,PG,69055550,Miguel Arteta,0
-467,467,Arachnophobia,1990,Thriller/Suspense,PG-13,106290270,Frank Marshall,0
-468,468,Lincoln,2012,Drama,PG-13,192122330,,0
-469,469,The Horse Whisperer,1998,Drama,PG-13,135497531,Robert Redford,0
-470,470,Muppets Most Wanted,2014,Comedy,PG,52807594,James Bobin,0
-471,471,Fantasia 2000 (IMAX),2000,Musical,G,94852354,,0
-472,472,Spaced Invaders,1990,Comedy,PG,29964452,Patrick Read Johnson,0
-473,473,Just Visiting,2001,Comedy,PG-13,7114869,,0
-474,474,Holes,2003,Drama,PG,94203395,Andrew Davis,0
-475,475,The Last Shot,2004,Comedy,R,629502,Jeff Nathanson,0
-476,476,Meet the Robinsons,2007,Adventure,G,119860589,Stephen Anderson,1
-477,477,Dead Poets Society,1989,Drama,PG,202531517,Peter Weir,0
-478,478,Avengers: Age of Ultron,2015,Action,PG-13,459005868,Joss Whedon,0
-479,479,Man of the House,1995,Comedy,PG,77573459,Stephen Herek,0
-480,480,Bears,2014,Documentary,G,18346024,,0
-481,481,Passed Away,1992,,PG-13,8187848,,0
-482,482,ESPN's Ultimate X - The Movie,2002,Documentary,PG,6089874,Bruce Hendricks,0
-483,483,Atlantis: The Lost Empire,2001,Adventure,PG,125188122,,1
-484,484,Ernest Goes to Camp,1987,Comedy,,50686462,,0
-485,485,Teacher's Pet: The Movie,2004,Comedy,PG,8812764,,0
-486,486,Spy Hard,1996,Comedy,PG-13,51373912,Rick Friedberg,0
-487,487,Snow Dogs,2002,Comedy,PG,117745317,Brian Levant,0
-488,488,Frankenweenie,2012,Comedy,PG,37363513,Tim Burton,0
-489,489,Tuck Everlasting,2002,Drama,PG,27789959,,0
-490,490,Hauru no ugoku shiro,2005,Adventure,PG,6194870,Hayao Miyazaki,0
-491,491,Gedo Senki (Tales from Earthsea),2010,Adventure,PG-13,51988,Goro Miyazaki,0
-492,492,Return to Oz,1985,Adventure,,25215934,Walter Murch,0
-493,493,Disney's A Christmas Carol,2009,Drama,PG,154927105,Robert Zemeckis,0
-494,494,Prefontaine,1997,Drama,PG-13,1085093,Steve James,0
-495,495,Beaches,1988,Drama,PG-13,120381757,Garry Marshall,0
-496,496,101 Dalmatians,1961,Comedy,G,1362870985,Stephen Herek,0
-497,497,The Last Song,2010,Drama,PG,67258772,Julie Anne Robinson,0
-498,498,Father Hood,1993,,PG-13,6654819,Paul Weitz,0
-499,499,Encino Man,1992,Comedy,PG,81369058,Les Mayfield,0
-500,500,Sweet Home Alabama,2002,Comedy,PG-13,184521151,Andy Tennant,0
-501,501,Play it to the Bone,1999,Comedy,R,13180524,Ron Shelton,0
-502,502,The Odd Life of Timothy Green,2012,Drama,PG,54914942,Peter Hedges,0
-503,503,Honey I Blew Up the Kid,1992,Comedy,PG,119162518,Randal Kleiser,0
-504,504,Hercules,1997,Adventure,G,182029412,,1
+,Unnamed: 0.1,Unnamed: 0,movie_title,release_date,genre,MPAA_rating,revenue,director,is_animation
+0,0,0,Recess: School's Out,3901,Comedy,G,54656124,Chuck Sheetz,0
+1,1,1,D2: The Mighty Ducks,3894,Comedy,PG,94226333,Sam Weisman,0
+2,2,2,Home on the Range,3904,Comedy,PG,67910166,,1
+3,3,3,Young Black Stallion,3903,Adventure,G,9254344,Simon Wincer,0
+4,4,4,What's Love Got to Do With It,3893,Drama,R,79618610,Brian Gibson,0
+5,5,5,Lady and the Tramp,3855,Drama,G,1236035515,,1
+6,6,6,Corky Romano,3901,Comedy,PG-13,35705805, rob pritts,0
+7,7,7,The Waterboy,3898,Comedy,PG-13,288691833,Frank Coraci,0
+8,8,8,Captain America: The Winter Soldier,3914,Action,PG-13,268013076,,0
+9,9,9,Pirates of the Caribbean: Dead Man’…,3906,Adventure,PG-13,544817142,,0
+10,10,10,Ladder 49,3904,Action,PG-13,101161045,,0
+11,11,11,Coyote Ugly,3900,Drama,PG-13,95070168,David McNally,0
+12,12,12,The Sixth Man,3897,Comedy,PG-13,27117599,Randall Miller,0
+13,13,13,Dick Tracy,3890,Action,PG,207231621,Warren Beatty,0
+14,14,14,Sister Act 2 Back in the Habit,3893,Comedy,PG,116965668,Bill Duke,0
+15,15,15,DuckTales: The Movie - Treasure of th…,3890,Adventure,G,36107823,,0
+16,16,16,Blame it on the Bellboy,3892,Comedy,PG-13,5872667,Mark Herman,0
+17,17,17,The Hunchback of Notre Dame,3896,Adventure,G,190988799,,1
+18,18,18,Ernest Goes to Jail,3890,Comedy,PG,49999822,,0
+19,19,19,Ant-Man,3915,Action,PG-13,180202163,Peyton Reed,0
+20,20,20,The Shaggy Dog,3906,Comedy,PG,78667428,Brian Robbins,0
+21,21,21,The Life Aquatic with Steve Zissou,3904,Comedy,R,32198655,,0
+22,22,22,Bridge to Terabithia,3907,Drama,PG,100760721,,0
+23,23,23,Beauty and the Beast,3891,Musical,G,363017667,Bill Condon,1
+24,24,24,Miami Rhapsody,3895,Romantic Comedy,PG-13,9857435,David Frankel,0
+25,25,25,A Bug's Life,3898,Adventure,G,288981698,,0
+26,26,26,3 Men and a Little Lady,3890,Comedy,PG,143108869,Emile Ardolino,0
+27,27,27,The Puppet Masters,3894,Horror,R,17727017,stuart orme,0
+28,28,28,Signs,3902,Thriller/Suspense,PG-13,330754439,M. Night Shyamalan,0
+29,29,29,Dead Presidents,3895,Drama,R,46741467,,0
+30,30,30,McFarland USA,3915,Drama,PG,44480275,Niki Caro,0
+31,31,31,George Of The Jungle,3897,Comedy,PG,193326632,Sam Weisman,0
+32,32,32,Bound by Honor,3893,,R,9156084,Taylor Hackford,0
+33,33,33,The Avengers,3912,Action,PG-13,660081224,,0
+34,34,34,Ten Things I Hate About You,3899,Romantic Comedy,PG-13,63354375,Gil Junger,0
+35,35,35,Earth,3909,Documentary,G,35981010,Deepa Mehta,0
+36,36,36,Hello Again,3887,Comedy,,44024529,,0
+37,37,37,When a Man Loves a Woman,3894,Drama,R,103354194,Luis Mandoki,0
+38,38,38,Unbreakable,3900,Thriller/Suspense,PG-13,148208901,M. Night Shyamalan,0
+39,39,39,3 Men and a Baby,3887,Comedy,PG,353334607,Leonard Nimoy,0
+40,40,40,X Games 3D: The Movie,3909,Documentary,PG,1563976,Steve Lawrence,0
+41,41,41,Cars 2,3911,Adventure,G,203522177,John Lasseter,0
+42,42,42,The Princess Diaries 2: Royal Engagement,3904,Romantic Comedy,G,129164207,Garry Marshall,0
+43,43,43,The Jungle Book 2,3903,Adventure,G,66966883,,0
+44,44,44,Aspen Extreme,3893,Romantic Comedy,PG-13,15970955,Patrick Hasburgh,0
+45,45,45,Noises Off...,3892,Comedy,PG-13,4631720,Peter Bogdanovich,0
+46,46,46,He Got Game,3898,Drama,R,38766948,Spike Lee,0
+47,47,47,Bringing Down the House,3903,Comedy,PG-13,185481530,Adam Shankman,0
+48,48,48,Bon Voyage!,3862,Comedy,Not Rated,109581646,Jean Paul Rappeneau,0
+49,49,49,Doctor Strange,3916,Adventure,PG-13,232532923,Scott Derrickson,0
+50,50,50,Flubber,3897,Comedy,PG,170406423,Les Mayfield,0
+51,51,51,Roving Mars,3906,Documentary,G,12948025,George Butler,0
+52,52,52,Captain Ron,3892,Comedy,PG-13,45741576,,0
+53,53,53,Shadow Conspiracy,3897,Thriller/Suspense,R,3957025,,0
+54,54,54,Good Morning Vietnam,3887,Comedy,R,254414837,Barry Levinson,0
+55,55,55,Babes in Toyland,3861,Musical,G,124841160,Clive Donner,0
+56,56,56,An Innocent Man,3889,Drama,R,40983414,Peter Yates,0
+57,57,57,Summer of Sam,3899,Drama,R,32007656,Spike Lee,0
+58,58,58,The Good Dinosaur,3915,Adventure,PG,123087120,,0
+59,59,59,Angels in the Outfield,3894,Comedy,PG,103798152,William Dear,0
+60,60,60,Tough Guys,3886,Comedy,,48758184,,0
+61,61,61,Something Wicked This Way Comes,3883,Horror,,15136765,,0
+62,62,62,The Rocketeer,3891,Action,PG,93256673,Joe Johnston,0
+63,63,63,Stakeout,3887,Comedy,R,141592160,John Badham,0
+64,64,64,National Treasure 2: Book of Secrets,3907,Adventure,PG,267003525,Jon Turteltaub,0
+65,65,65,Terminal Velocity,3894,Action,PG-13,34048315,Deran Sarafian,0
+66,66,66,Apocalypto,3906,Adventure,R,64959548,Mel Gibson,0
+67,67,67,Invincible,3906,Drama,PG,74398864,Ericson Core,0
+68,68,68,25th Hour,3902,Drama,R,18325463,Spike Lee,0
+69,69,69,Mighty Joe Young,3898,Adventure,PG,87906042,Ron Underwood,0
+70,70,70,Deceived,3891,Thriller/Suspense,PG-13,57544453,,0
+71,71,71,Never Cry Wolf,3883,Drama,,70669955,Carroll Ballard,0
+72,72,72,G-Force,3909,Adventure,PG,134246932,,0
+73,73,73,Feast of July,3895,Drama,R,568342,Christopher Menaul,0
+74,74,74,The Lookout,3907,Drama,R,5637048,Scott Frank,0
+75,75,75,Cool Runnings,3893,Comedy,PG,140392731,Jon Turteltaub,0
+76,76,76,Alice Through the Looking Glass,3916,Adventure,PG,77042381,James Bobin,0
+77,77,77,The Devil and Max Devlin,3881,,,48517980,Steven Hilliard Stern,0
+78,78,78,The Chronicles of Narnia: Prince Caspian,3908,Adventure,PG,166277038,Andrew Adamson,0
+79,79,79,The Insider,3899,Drama,R,47794214,Michael Mann,0
+80,80,80,Camp Nowhere,3894,Comedy,PG,21576332,Jonathan Prince,0
+81,81,81,The Rock,3896,Action,R,255702705,,0
+82,82,82,Green Card,3890,Romantic Comedy,PG-13,59679131,Peter Weir,0
+83,83,83,Real Steel,3911,Action,PG-13,90848019,Shawn Levy,0
+84,84,84,A Kid in King Arthur's Court,3895,Adventure,PG,25981285,,0
+85,85,85,The Last Flight of Noah’s Ark,3880,,,34472116,Charles Jarrott,0
+86,86,86,African Cats,3911,Documentary,G,16401551,,0
+87,87,87,Toy Story 3D Double Feature,3909,Adventure,G,34509545,John Lasseter,0
+88,88,88,Into the Woods,3914,Musical,PG,130894237,Rob Marshall,0
+89,89,89,Finding Nemo,3903,Adventure,G,518148559,Andrew Stanton,0
+90,90,90,The Good Mother,3888,Drama,,9772655,Leonard Nimoy,0
+91,91,91,The Hundred-Foot Journey,3914,Romantic Comedy,PG,55961409,,0
+92,92,92,Pearl Harbor,3901,Action,PG-13,295705112,Michael Bay,0
+93,93,93,Pirates of the Caribbean: At World’…,3907,Adventure,PG-13,379129960,Gore Verbinski,0
+94,94,94,Color of Night,3894,Thriller/Suspense,R,40804816,Richard Rush,0
+95,95,95,Romy and Michele's High School Reunion,3897,Comedy,R,53693680,David Mirkin,0
+96,96,96,Cheetah,3889,Adventure,,16653473,,0
+97,97,97,Jack,3896,Drama,PG-13,111792852,,0
+98,98,98,Monsters University,3913,Adventure,G,278395641,Dan Scanlon,0
+99,99,99,The Fifth Estate,3913,Drama,R,3374251,Bill Condon,0
+100,100,100,Before and After,3896,Drama,PG-13,16482589,Barbet Schroeder,0
+101,101,101,Moonlight Mile,3902,Drama,PG-13,9909094,Brad Silberling,0
+102,102,102,A Stranger Among Us,3892,Drama,PG-13,24950752,Sidney Lumet,0
+103,103,103,The Lizzie McGuire Movie,3903,Comedy,PG,59743191,Jim Fall,0
+104,104,104,Krippendorf's Tribe,3898,Comedy,PG-13,13608633,Todd Holland,0
+105,105,105,crazy/beautiful,3901,Drama,PG-13,25214223,John Stockwell,0
+106,106,106,Adventures in Babysitting,3887,Comedy,,72853569,Chris Columbus,0
+107,107,107,The Game Plan,3907,Comedy,PG,111010758,Andy Fickman,0
+108,108,108,Splash,3884,Comedy,PG,157057661,Ron Howard,0
+109,109,109,Who Framed Roger Rabbit?,3888,Comedy,PG,316250084,Who Framed Roger Rabbit,0
+110,110,110,The Light Between Oceans,3916,Drama,PG-13,12545979,Derek Cianfrance,0
+111,111,111,The Guardian,3906,Action,PG-13,70801353,,0
+112,112,112,The Sword in the Stone,3863,Adventure,,153870834,,1
+113,113,113,Mr. Holland's Opus,3895,Drama,PG,157508868,Stephen Herek,0
+114,114,114,The Rescuers Down Under,3890,Adventure,G,55796728,Mike Gabriel,1
+115,115,115,The Preacher's Wife,3896,Drama,PG,91076877,Penny Marshall,0
+116,116,116,Sarafina!,3892,Drama,PG-13,14841352,Darrell Roodt,0
+117,117,117,Trenchcoat,3883,Comedy,,11519089,,0
+118,118,118,Confessions of a Teenage Drama Queen,3904,Comedy,PG,39816568,Sara Sugarman,0
+119,119,119,Around the World in 80 Days,3904,Adventure,PG,32585356,,0
+120,120,120,Blaze,3889,Drama,R,39884640,,0
+121,121,121,Toy Story,3895,Adventure,G,370409631,John Lasseter,0
+122,122,122,Prince of Persia: Sands of Time,3910,Action,PG-13,96971361,Mike Newell,0
+123,123,123,Eddie,3896,Comedy,PG-13,59828966,,0
+124,124,124,White Fang 2: Myth of the White Wolf,3894,Adventure,PG,18083994,Ken Olin,0
+125,125,125,White Squall,3896,Adventure,PG-13,19509726,Ridley Scott,0
+126,126,126,The Invisible,3907,Thriller/Suspense,PG-13,25202168,Leigh Whannell,0
+127,127,127,Guilty as Sin,3893,Thriller/Suspense,R,46064723,Sidney Lumet,0
+128,128,128,Operation Dumbo Drop,3895,Adventure,PG,47809421,Simon Wincer,0
+129,129,129,Ghosts of the Abyss,3903,Documentary,G,23803108,James Cameron,0
+130,130,130,Scenes from a Mall,3891,Comedy,,19149495,Paul Mazursky,0
+131,131,131,The BFG,3916,Adventure,PG,55483770,Steven Spielberg,0
+132,132,132,Tron,3882,Action,,77184895,Joseph Kosinski,0
+133,133,133,Firelight,3898,Drama,R,1409943,William Nicholson,0
+134,134,134,Delivery Man,3913,Comedy,PG-13,31787136,Ken Scott,0
+135,135,135,New York Stories,3889,Drama,PG,22740861,,0
+136,136,136,Disorganized Crime,3889,Comedy,,15233465,Jim Kouf,0
+137,137,137,Tom and Huck,3895,Adventure,PG,45911517,Peter Hewitt,0
+138,138,138,Keeping the Faith,3900,Romantic Comedy,PG-13,57925202,Edward Norton,0
+139,139,139,Grosse Pointe Blank,3897,Black Comedy,R,51579764,,0
+140,140,140,Indian Summer,3893,Comedy,R,29968953,Mike Binder,0
+141,141,141,The Princess and the Frog,3909,Adventure,G,116316457,,1
+142,142,142,Billy Bathgate,3891,Drama,R,31167691,Robert Benton,0
+143,143,143,3 Ninjas Kick Back,3894,Action,PG,24267154,,0
+144,144,144,My Boyfriend's Back,3893,,PG-13,6554384,Bob Balaban,0
+145,145,145,Goal! The Dream Begins,3906,Drama,PG,5512647,Danny Cannon,0
+146,146,146,Country,3884,Drama,,21075000,,0
+147,147,147,Big Trouble,3902,Comedy,PG-13,10537188,Barry Sonnenfeld,0
+148,148,148,People Like Us,3912,Drama,PG-13,13165822,Alex Kurtzman,0
+149,149,149,Mars Needs Moms,3911,Adventure,PG,22741603,Simon Wells,0
+150,150,150,Angie,3894,Comedy,R,19116981,Martha Coolidge,0
+151,151,151,Deuce Bigalow: Male Gigolo,3899,Comedy,R,106921374,,0
+152,152,152,Veronica Guerin,3903,Drama,R,2194759,Joel Schumacher,0
+153,153,153,Max Keeble's Big Move,3901,Comedy,PG,25749730,Tim Hill,0
+154,154,154,The Scarlet Letter,3895,Drama,R,20075033,,0
+155,155,155,D3: The Mighty Ducks,3896,Comedy,PG,43713554,Robert Lieberman,0
+156,156,156,Up,3909,Adventure,PG,329336681,Pete Docter,0
+157,157,157,Alive,3893,Adventure,R,73914543,cho il hyung,0
+158,158,158,Can't Buy Me Love,3887,Romantic Comedy,,68181300,,0
+159,159,159,The Hoax,3907,Drama,R,8779196,,0
+160,160,160,Fantasia,3840,Musical,G,2187090808,,1
+161,161,161,Crimson Tide,3895,Action,R,177102077,Tony Scott,0
+162,162,162,Ransom,3896,Action,R,259807820,Ron Howard,0
+163,163,163,Pretty Woman,3890,Romantic Comedy,R,356389765,Garry Marshall,0
+164,164,164,Inspector Gadget,3899,Comedy,PG,161610341,,0
+165,165,165,Winnie the Pooh,3911,Adventure,G,28375869,,0
+166,166,166,The Tigger Movie,3900,Adventure,G,71228678,,0
+167,167,167,Heavy Weights,3895,Comedy,PG,34245779,Steven Brill,0
+168,168,168,What About Bob?,3891,Comedy,PG,127571325,Frank Oz,0
+169,169,169,Condorman,3881,Action,,0,Charles Jarrott,0
+170,170,170,The Haunted Mansion,3903,Comedy,PG,105775678,Rob Minkoff,0
+171,171,171,The Hitchhiker's Guide to the Galaxy,3905,Comedy,PG,67096891,Garth Jennings,0
+172,172,172,Bedknobs and Broomsticks,3871,Musical,,91305448,Robert Stevenson,1
+173,173,173,Pooh's Heffalump Movie,3905,Adventure,G,23801835,,1
+174,174,174,Open Range,3903,Western,R,81547672,Kevin Costner,0
+175,175,175,D.O.A.,3888,Thriller/Suspense,,26062188,,0
+176,176,176,Meet the Deedles,3898,Comedy,PG,7829877,Steve Boyum,0
+177,177,177,A Beautiful Planet,3916,Documentary,G,7895708,Toni Myers,0
+178,178,178,Sister Act,3892,Comedy,PG,283583472,Emile Ardolino,0
+179,179,179,Strange Magic,3915,Adventure,PG,12429583,Gary Rydstrom,0
+180,180,180,The Many Adventures of Winnie the Pooh,3877,,,0,,0
+181,181,181,Quiz Show,3894,Drama,PG-13,50840394,Robert Redford,0
+182,182,182,While You Were Sleeping,3895,Romantic Comedy,PG,157082900,,0
+183,183,183,Bedtime Stories,3908,Comedy,PG,128039679,Adam Shankman,0
+184,184,184,The Chronicles of Narnia: The Lion t…,3905,Adventure,PG,381557539,,0
+185,185,185,Instinct,3899,Drama,R,56595842,Halina Reijn,0
+186,186,186,Step Up,3906,Drama,PG-13,84078780,Anne Fletcher,0
+187,187,187,G.I. Jane,3897,Drama,R,88467531,Ridley Scott,0
+188,188,188,Oscar,3891,Comedy,PG,47181395,Academy Award for Best Director,0
+189,189,189,The Parent Trap,3898,Comedy,PG,119185667,,0
+190,190,190,Primeval,3907,Adventure,R,12985302,,0
+191,191,191,The Lone Ranger,3913,Western,PG-13,92597388,Gore Verbinski,0
+192,192,192,Monsters Inc.,3901,Adventure,G,416073179,Pete Docter,0
+193,193,193,Reign of Fire,3902,Action,PG-13,62480631,Rob Bowman,0
+194,194,194,Running Brave,3883,Drama,,3223725,,0
+195,195,195,Dinosaur,3900,Adventure,PG,215438985,,1
+196,196,196,Rushmore,3898,Black Comedy,R,28392518,,0
+197,197,197,Freaky Friday,3877,Comedy,,98067733,Mark Waters,0
+198,198,198,The 13th Warrior,3899,Action,R,54262148,John McTiernan,0
+199,199,199,Brave,3912,Adventure,PG,251292441,,0
+200,200,200,Eight Below,3906,Adventure,PG,105037235,Frank Marshall,0
+201,201,201,Gake no ue no Ponyo,3909,Adventure,G,16961607,,0
+202,202,202,Queen of Katwe,3916,Drama,PG,8874389,Mira Nair,0
+203,203,203,Straight Talk,3892,Comedy,PG,43068356,,0
+204,204,204,Holy Man,3898,Comedy,PG,21694605,Stephen Herek,0
+205,205,205,The Sorcerer's Apprentice,3910,Adventure,PG,67473105,Jon Turteltaub,0
+206,206,206,Stella,3890,Drama,PG-13,40077147,,0
+207,207,207,An American Werewolf in Paris,3897,Horror,R,48546161,,0
+208,208,208,The Mighty Ducks,3892,Comedy,PG,103120810,Stephen Herek,0
+209,209,209,Tall Tale,3895,Western,PG,15983331,Jeremiah S. Chechik,0
+210,210,210,Tangled,3910,Adventure,PG,214388548,,1
+211,211,211,Ed Wood,3894,Comedy,R,12042634,,0
+212,212,212,The Jerky Boys,3895,Comedy,R,14641561,,0
+213,213,213,The Rich Man's Wife,3896,Thriller/Suspense,R,16284619,Amy Holden Jones,0
+214,214,214,20000 Leagues Under the Sea,3854,Adventure,,528279994,Richard Fleischer,0
+215,215,215,Super Mario Bros.,3893,Action,PG,42445058,,0
+216,216,216,The Proposal,3909,Romantic Comedy,PG-13,184288829,Anne Fletcher,0
+217,217,217,Race to Witch Mountain,3909,Adventure,PG,75501997,Andy Fickman,0
+218,218,218,The Adventures of Huck Finn,3893,Adventure,PG,49080505,Stephen Sommers,0
+219,219,219,Jefferson in Paris,3895,Drama,PG-13,4770461,James Ivory,0
+220,220,220,The Jungle Book,3916,Adventure,PG,364001123,Jon Favreau,0
+221,221,221,The Jungle Book,3916,Adventure,PG,364001123,Jon Favreau,0
+222,222,222,The Jungle Book,3916,Adventure,PG,364001123,Jon Favreau,0
+223,223,223,The Jungle Book,3916,Adventure,PG,364001123,Jon Favreau,0
+224,224,224,The Jungle Book,3916,Adventure,PG,364001123,Jon Favreau,0
+225,225,225,The Jungle Book,3916,Adventure,PG,364001123,Jon Favreau,0
+226,226,226,The Jungle Book,3916,Adventure,PG,364001123,Jon Favreau,0
+227,227,227,The Jungle Book,3916,Adventure,PG,364001123,Jon Favreau,0
+228,228,228,The Jungle Book,3867,Musical,Not Rated,789612346,Jon Favreau,0
+229,229,229,The Jungle Book,3867,Musical,Not Rated,789612346,Jon Favreau,0
+230,230,230,The Jungle Book,3867,Musical,Not Rated,789612346,Jon Favreau,0
+231,231,231,The Jungle Book,3867,Musical,Not Rated,789612346,Jon Favreau,0
+232,232,232,The Jungle Book,3867,Musical,Not Rated,789612346,Jon Favreau,0
+233,233,233,The Jungle Book,3867,Musical,Not Rated,789612346,Jon Favreau,0
+234,234,234,The Jungle Book,3867,Musical,Not Rated,789612346,Jon Favreau,0
+235,235,235,The Jungle Book,3867,Musical,Not Rated,789612346,Jon Favreau,0
+236,236,236,Sky High,3905,Adventure,PG,84088854,Mike Mitchell,0
+237,237,237,Toy Story 2,3899,Adventure,G,404450426,,0
+238,238,238,The Rescuers,3877,Adventure,,159743914,,1
+239,239,239,Remember the Titans,3900,Drama,PG,180742479,Boaz Yakin,0
+240,240,240,A Lot Like Love,3905,Comedy,PG-13,28716947,Nigel Cole,0
+241,241,241,3 Ninjas,3892,Action,PG,58965304,,0
+242,242,242,Flight of the Navigator,3886,Adventure,,42183197,Randal Kleiser,0
+243,243,243,America's Heart and Soul,3904,Documentary,Not Rated,426246,Louie Schwartzberg,0
+244,244,244,Swing Vote,3908,Comedy,PG-13,19125841,Joshua Michael Stern,0
+245,245,245,The Straight Story,3899,Drama,G,10111144,David Lynch,0
+246,246,246,The Kid,3900,Comedy,PG,108993148,Charlie Chaplin,0
+247,247,247,Enchanted,3907,Romantic Comedy,PG,156074310,Kevin Lima,1
+248,248,248,Zootopia,3916,Adventure,PG,341268248,,1
+249,249,249,I'll Be Home For Christmas,3898,Comedy,PG,21941840,,0
+250,250,250,The War at Home,3896,,R,65543,,0
+251,251,251,Peter Pan: Return to Neverland,3902,Adventure,G,70269715,Return to Never Land,0
+252,252,252,Ratatouille,3907,Comedy,G,252955933,Brad Bird,0
+253,253,253,Secretariat,3910,Drama,PG,63781920,Randall Wallace,0
+254,254,254,Medicine Man,3892,Drama,PG-13,91304495,John McTiernan,0
+255,255,255,A Thousand Acres,3897,Drama,R,14561324,Jocelyn Moorhouse,0
+256,256,256,Mission to Mars,3900,Adventure,PG,95208344,Brian De Palma,0
+257,257,257,Brother Bear,3903,Adventure,G,119218333,,1
+258,258,258,Snow White and the Seven Dwarfs,3837,Musical,G,5228953251,,1
+259,259,259,Toy Story 3,3910,Adventure,G,443408255,Lee Unkrich,0
+260,260,260,Miracle,3904,Drama,PG,87392478,Gavin O'Connor,0
+261,261,261,My Favorite Martian,3899,Comedy,PG,61150849,Donald Petrie,0
+262,262,262,Benji the Hunted,3887,Adventure,,32798382,,0
+263,263,263,A Far Off Place,3893,Adventure,PG,26248558,Mikael Salomon,0
+264,264,264,Old Dogs,3909,Comedy,PG,55503929,Walt Becker,0
+265,265,265,Alice in Wonderland,3910,Adventure,PG,357063499,Tim Burton,1
+266,266,266,The Little Mermaid,3889,Adventure,G,223726012,,1
+267,267,267,Stick It,3906,Comedy,PG-13,34634731,Jessica Bendinger,0
+268,268,268,Funny Bones,3895,Comedy,R,1025425,Peter Chelsom,0
+269,269,269,Cars,3906,Comedy,G,314140384,John Lasseter,0
+270,270,270,Bicentennial Man,3899,Drama,PG,94838225,Chris Columbus,0
+271,271,271,Chimpanzee,3912,Documentary,G,30675725,,0
+272,272,272,The Apple Dumpling Gang,3875,Comedy,,131246872,,0
+273,273,273,The Other Sister,3899,Romantic Comedy,PG-13,46145331,Garry Marshall,0
+274,274,274,A Simple Twist of Fate,3894,Drama,PG-13,7035189,Gillies MacKinnon,0
+275,275,275,Where the Heart Is,3890,Comedy,,2210321,Matt Williams,0
+276,276,276,Kaze Tachinu,3913,Drama,PG-13,5367415,Hayao Miyazaki,0
+277,277,277,Off Beat,3886,Comedy,,11003932,Michael Dinner,0
+278,278,278,The Greatest Game Ever Played,3905,Drama,PG,20162672,Bill Paxton,0
+279,279,279,The Three Musketeers,3893,Adventure,PG,109310377,Paul W. S. Anderson,0
+280,280,280,A Civil Action,3898,Drama,PG-13,94139530,Steven Zaillian,0
+281,281,281,Walt and El Grupo,3909,Documentary,PG,23064,Theodore Thomas,0
+282,282,282,Powder,3895,Drama,PG-13,59727216,Victor Salva,0
+283,283,283,1492: Conquest of Paradise,3892,Adventure,PG-13,14421454,Ridley Scott,0
+284,284,284,The Cemetery Club,3893,Comedy,PG-13,11369541,Bill Duke,0
+285,285,285,Stay Alive,3906,Horror,PG-13,29712825,William Brent Bell,0
+286,286,286,That Darn Cat,3897,Comedy,PG,33613158,Robert Stevenson,0
+287,287,287,The Muppet Christmas Carol,3892,Comedy,G,55417615,Brian Henson,0
+288,288,288,Step Up 2 the Streets,3908,Drama,PG-13,68118371,Jon M. Chu,0
+289,289,289,Fantasia 2000 (Theatrical Release),3900,Musical,G,14238144,,0
+290,290,290,The Santa Clause 2,3902,Comedy,G,201959095,Michael Lembeck,0
+291,291,291,The Recruit,3903,Thriller/Suspense,PG-13,73793522,Roger Donaldson,0
+292,292,292,Money for Nothing,3893,Comedy,R,2127496,,0
+293,293,293,Bad Company,3895,Thriller/Suspense,R,6829092,Joel Schumacher,0
+294,294,294,Bad Company,3895,Thriller/Suspense,R,6829092,Joel Schumacher,0
+295,295,295,Bad Company,3895,Thriller/Suspense,R,6829092,Joel Schumacher,0
+296,296,296,Bad Company,3895,Thriller/Suspense,R,6829092,Joel Schumacher,0
+297,297,297,Bad Company,3895,Thriller/Suspense,R,6829092,Joel Schumacher,0
+298,298,298,Bad Company,3895,Thriller/Suspense,R,6829092,Joel Schumacher,0
+299,299,299,Bad Company,3895,Thriller/Suspense,R,6829092,Joel Schumacher,0
+300,300,300,Bad Company,3895,Thriller/Suspense,R,6829092,Joel Schumacher,0
+301,301,301,Bad Company,3902,Action,PG-13,43756218,Joel Schumacher,0
+302,302,302,Bad Company,3902,Action,PG-13,43756218,Joel Schumacher,0
+303,303,303,Bad Company,3902,Action,PG-13,43756218,Joel Schumacher,0
+304,304,304,Bad Company,3902,Action,PG-13,43756218,Joel Schumacher,0
+305,305,305,Bad Company,3902,Action,PG-13,43756218,Joel Schumacher,0
+306,306,306,Bad Company,3902,Action,PG-13,43756218,Joel Schumacher,0
+307,307,307,Bad Company,3902,Action,PG-13,43756218,Joel Schumacher,0
+308,308,308,Bad Company,3902,Action,PG-13,43756218,Joel Schumacher,0
+309,309,309,I Love Trouble,3894,Romantic Comedy,PG,63651027,Charles Shyer,0
+310,310,310,The Absent Minded Professor,3861,Comedy,,310094574,Robert Stevenson,0
+311,311,311,Jungle 2 Jungle,3897,Comedy,PG,110058379,John Pasquin,0
+312,312,312,Tex,3882,Drama,,20643199,,0
+313,313,313,Life With Mikey,3893,Comedy,PG,25146538,James Lapine,0
+314,314,314,Gone Fishin',3897,Comedy,PG,36265379,Christopher Cain,0
+315,315,315,Rogue One: A Star Wars Story,3916,Adventure,PG-13,529483936,Gareth Edwards,0
+316,316,316,The Marrying Man,3891,Romantic Comedy,R,24939118,,0
+317,317,317,Bubble Boy,3901,Comedy,PG-13,7450434,blair hayes,0
+318,318,318,Baby: Secret of the Lost Legend,3885,Adventure,,33900697,bill l norton,0
+319,319,319,The Fox and the Hound,3881,Comedy,,133118889,,1
+320,320,320,High Heels and Low Lifes,3901,,R,337782,Mel Smith,0
+321,321,321,The Tie That Binds,3895,Thriller/Suspense,R,11167895,Wesley Strick,0
+322,322,322,John Carter,3912,Adventure,PG-13,77372445,Andrew Stanton,0
+323,323,323,Blank Check,3894,Comedy,PG,63170804,,0
+324,324,324,Guardians of the Galaxy,3914,Adventure,PG-13,343771168,James Gunn,0
+325,325,325,Star Wars Ep. VII: The Force Awakens,3915,Adventure,PG-13,936662225,J. J. Abrams,0
+326,326,326,A Goofy Movie,3895,Comedy,G,68479579,Kevin Lima,1
+327,327,327,Hocus Pocus,3893,Comedy,PG,80147079,Kenny Ortega,0
+328,328,328,Pete’s Dragon,3916,Adventure,PG,76233151,David Lowery,0
+329,329,329,Night Crossing,3882,Drama,,12903059,Delbert Mann,0
+330,330,330,Lilo & Stitch,3902,Adventure,PG,211506702,,1
+331,331,331,Metro,3897,Action,R,58804106,Ananda Krishnan,0
+332,332,332,National Treasure,3904,Adventure,PG,234069353,Jon Turteltaub,0
+333,333,333,Shanghai Noon,3900,Western,PG-13,89042541,Tom Dey,0
+334,334,334,Dangerous Minds,3895,Drama,R,164552293,john n smith,0
+335,335,335,The Distinguished Gentleman,3892,Comedy,R,94349900,Jonathan Lynn,0
+336,336,336,The Secret World of Arietty,3912,Adventure,G,20325733,Hiromasa Yonebayashi,0
+337,337,337,The Princess Diaries,3901,Comedy,G,161218928,Garry Marshall,0
+338,338,338,Step Up 3D,3910,Drama,PG-13,45302137,Jon M. Chu,0
+339,339,339,Underdog,3907,Adventure,PG,53619462,Frederik Du Chau,0
+340,340,340,Red Rock West,3894,,R,5170709,John Dahl,0
+341,341,341,Captain America: Civil War,3916,Action,PG-13,408084349,,0
+342,342,342,Mr. Wrong,3896,Romantic Comedy,PG-13,24422334,Nick Castle,0
+343,343,343,Nixon,3895,Drama,R,26302005,Oliver Stone,0
+344,344,344,The Ref,3894,Comedy,R,23401275,,0
+345,345,345,The Santa Clause 3: The Escape Clause,3906,Comedy,G,108694869,Michael Lembeck,0
+346,346,346,Ice Princess,3905,Comedy,G,32064685,Tim Fywell,0
+347,347,347,King Arthur,3904,Adventure,PG-13,70423706,Antoine Fuqua,0
+348,348,348,Nothing To Lose,3897,Comedy,R,81692095,Steve Oedekerk,0
+349,349,349,Herbie: Fully Loaded,3905,Comedy,G,86812798,Angela Robinson,0
+350,350,350,Father of the Bride,3891,Comedy,PG,179821881,Charles Shyer,0
+351,351,351,You Again,3910,Comedy,PG,27461121,Andy Fickman,0
+352,352,352,Treasure Planet,3902,Adventure,PG,55189145,,1
+353,353,353,The Great Mouse Detective,3886,Adventure,,53637367,,1
+354,354,354,Cinderella,3915,Drama,PG,201151353,Kay Cannon,1
+355,355,355,Cinderella,3915,Drama,PG,201151353,Kay Cannon,1
+356,356,356,Cinderella,3915,Drama,PG,201151353,Kay Cannon,1
+357,357,357,Cinderella,3915,Drama,PG,201151353,Kay Cannon,1
+358,358,358,Cinderella,3915,Drama,PG,201151353,Kay Cannon,1
+359,359,359,Cinderella,3915,Drama,PG,201151353,Kay Cannon,1
+360,360,360,Cinderella,3915,Drama,PG,201151353,Kay Cannon,1
+361,361,361,Cinderella,3915,Drama,PG,201151353,Kay Cannon,1
+362,362,362,Cinderella,3850,Drama,G,920608730,Kay Cannon,1
+363,363,363,Cinderella,3850,Drama,G,920608730,Kay Cannon,1
+364,364,364,Cinderella,3850,Drama,G,920608730,Kay Cannon,1
+365,365,365,Cinderella,3850,Drama,G,920608730,Kay Cannon,1
+366,366,366,Cinderella,3850,Drama,G,920608730,Kay Cannon,1
+367,367,367,Cinderella,3850,Drama,G,920608730,Kay Cannon,1
+368,368,368,Cinderella,3850,Drama,G,920608730,Kay Cannon,1
+369,369,369,Cinderella,3850,Drama,G,920608730,Kay Cannon,1
+370,370,370,Frozen,3913,Adventure,PG,414997174,,1
+371,371,371,Pirates of the Caribbean: On Stranger…,3911,Adventure,PG-13,256263359,Rob Marshall,0
+372,372,372,Zokkomon,3911,Adventure,PG,2984,satyajit bhatkal,0
+373,373,373,Gross Anatomy,3889,Drama,PG-13,23972012,,0
+374,374,374,The Incredibles,3904,Adventure,PG,354488708,Brad Bird,0
+375,375,375,Frank McKlusky C.I.,3902,,,0,,0
+376,376,376,Taking Care of Business,3890,Comedy,R,39963460,Arthur Hiller,0
+377,377,377,Tim Burton's The Nightmare Before Chr…,3906,Musical,PG,30737517,Henry Selick,0
+378,378,378,Cocktail,3888,Drama,R,160442289,Homi Adajania,0
+379,379,379,Gun Shy,3900,Comedy,R,2562155,Simon West,0
+380,380,380,Mr. Destiny,3890,Comedy,PG-13,30722056,,0
+381,381,381,Herbie Goes to Monte Carlo,3877,,,105847527,Vincent McEveety,0
+382,382,382,Evita,3896,Musical,PG,92077628,Alan Parker,0
+383,383,383,Dark Water,3905,Thriller/Suspense,PG-13,33500491,,0
+384,384,384,Piglet's Big Movie,3903,Comedy,G,32298812,,0
+385,385,385,Kazaam,3896,Comedy,PG,36009655,Paul Michael Glaser,0
+386,386,386,Déjà Vu,3906,Thriller/Suspense,PG-13,82267038,Tony Scott,0
+387,387,387,Waking Sleeping Beauty,3910,Documentary,PG,86264,Don Hahn,0
+388,388,388,The Count of Monte Cristo,3902,Drama,PG-13,78682079,Kevin Reynolds,0
+389,389,389,The Program,3893,Action,R,46919256,,0
+390,390,390,When in Rome,3910,Romantic Comedy,PG-13,34917330,Mark Steven Johnson,0
+391,391,391,Born Yesterday,3893,Romantic Comedy,PG,36165012,George Cukor,0
+392,392,392,The Alamo,3904,Western,PG-13,30416359,John Lee Hancock,0
+393,393,393,Mad Love,3895,Drama,PG-13,29934306,Karl Freund,0
+394,394,394,Armageddon,3898,Adventure,PG-13,362324957,Michael Bay,0
+395,395,395,Air Bud,3897,Comedy,PG,45266588,Charles Martin Smith,0
+396,396,396,Fire Birds,3890,Action,PG-13,29485923,,0
+397,397,397,The Black Cauldron,3885,Adventure,,50553142,,1
+398,398,398,Oz the Great and Powerful,3913,Adventure,PG,243434130,Sam Raimi,0
+399,399,399,Two Much,3896,Romantic Comedy,PG-13,2057055,Fernando Trueba,0
+400,400,400,102 Dalmatians,3900,Comedy,G,104055039,Kevin Lima,0
+401,401,401,The Pacifier,3905,Comedy,PG,148619029,Adam Shankman,0
+402,402,402,Prom,3911,Comedy,PG,10768946,Ryan Murphy,0
+403,403,403,Un indien dans la ville,3896,Comedy,PG,1963937,,0
+404,404,404,Annapolis,3906,Drama,PG-13,22044113,Justin Lin,0
+405,405,405,The Country Bears,3902,Adventure,G,24650121,,1
+406,406,406,Planes: Fire and Rescue,3914,Adventure,PG,61040349,,0
+407,407,407,Tin Men,3887,Comedy,,54787202,Barry Levinson,0
+408,408,408,Renaissance Man,3894,Comedy,PG-13,49945474,Penny Marshall,0
+409,409,409,Playing God,3897,Thriller/Suspense,R,7652965,,0
+410,410,410,Phenomenon,3896,Drama,PG,199559799,,0
+411,411,411,Gnomeo and Juliet,3911,Comedy,G,106270797,Kelly Asbury,0
+412,412,412,The Color of Money,3886,Drama,R,117957323,Martin Scorsese,0
+413,413,413,Blackbeard's Ghost,3868,Comedy,,138612686,Robert Stevenson,0
+414,414,414,Ernest Scared Stupid,3891,Comedy,PG,28320147,,0
+415,415,415,The Emperor's New Groove,3900,Adventure,G,136789252,Mark Dindal,1
+416,416,416,Double Take,3901,Action,PG-13,44418589,George Gallo,0
+417,417,417,Rocket Man,3897,Comedy,PG,28371890,Dexter Fletcher,0
+418,418,418,Mulan,3898,Adventure,G,216807832,Niki Caro,1
+419,419,419,Song of the South,3846,Adventure,G,1078510579,,1
+420,420,420,The Black Hole,3879,,,120377374,gary nelson,0
+421,421,421,Raising Helen,3904,Comedy,PG-13,50886144,Garry Marshall,0
+422,422,422,A Gun in Betty Lou's Handbag,3892,,PG-13,7295423,Allan Moyle,0
+423,423,423,The Air Up There,3894,Comedy,PG,42940186,Paul Michael Glaser,0
+424,424,424,Roommates,3895,Comedy,PG,23404369,,0
+425,425,425,Morning Light,3908,Documentary,PG,322979,,0
+426,426,426,Valiant,3905,Adventure,G,25616292,directors.php,0
+427,427,427,Down and Out in Beverly Hills,3886,Comedy,R,141183693,Paul Mazursky,0
+428,428,428,Tarzan,3899,Adventure,G,283900254,,1
+429,429,429,The Royal Tenenbaums,3901,Black Comedy,R,76758193,,0
+430,430,430,James and the Giant Peach,3896,Adventure,PG,55159783,Henry Selick,0
+431,431,431,Mystery Alaska,3899,Comedy,R,14755189,Jay Roach,0
+432,432,432,Last Dance,3896,Drama,R,11171714,,0
+433,433,433,My Science Project,3885,Comedy,,9736051,Jonathan Betuel,0
+434,434,434,Homeward Bound II: Lost in San Franc…,3896,Adventure,G,62384706,David R. Ellis,0
+435,435,435,The Muppets,3911,Comedy,PG,94189503,James Bobin,0
+436,436,436,Turner & Hooch,3889,Comedy,PG,150176361,Roger Spottiswoode,0
+437,437,437,Oceans,3910,Documentary,G,20751600,,0
+438,438,438,It's Pat,3894,Comedy,,125666,Adam Bernstein,0
+439,439,439,The Finest Hours,3916,Thriller/Suspense,PG,27569558,Craig Gillespie,0
+440,440,440,Shoot to Kill,3888,Action,,60097074,Roger Spottiswoode,0
+441,441,441,Hannah Montana the Movie,3909,Drama,G,89443640,Peter Chelsom,0
+442,442,442,First Kid,3896,Comedy,PG,50465108,David Mickey Evans,0
+443,443,443,Consenting Adults,3892,Drama,R,43859823,Alan J. Pakula,0
+444,444,444,Dan in Real Life,3907,Romantic Comedy,PG-13,58350234,Peter Hedges,0
+445,445,445,Sorority Boys,3902,Comedy,R,14797862,Wallace Wolodarsky,0
+446,446,446,Simon Birch,3898,Drama,PG,32809442,Mark Steven Johnson,0
+447,447,447,In the Army Now,3894,Comedy,PG,59673787,Daniel Petrie Jr.,0
+448,448,448,Wreck-It Ralph,3912,Adventure,PG,200354959,Rich Moore,1
+449,449,449,Iron Man 3,3913,Action,PG-13,424084233,Shane Black,0
+450,450,450,One Magic Christmas,3885,Drama,,31415432,phillip borsos,0
+451,451,451,Beverly Hills Chihuahua,3908,Comedy,PG,110932022,Raja Gosnell,0
+452,452,452,WALL-E,3908,Adventure,G,262771918,Andrew Stanton,0
+453,453,453,Aladdin,3892,Comedy,G,441969178,Guy Ritchie,1
+454,454,454,Casanova,3905,Drama,R,14574087,,0
+455,455,455,Thor: The Dark World,3913,Adventure,PG-13,213962184,Alan Taylor,0
+456,456,456,Monkey Kingdom,3915,Documentary,G,16432322,,0
+457,457,457,Ernest Saves Christmas,3888,Comedy,PG,57845202,,0
+458,458,458,Hannah Montana/Miley Cyrus: Best of B…,3908,Concert/Performance,G,76646993,,0
+459,459,459,Saving Mr. Banks,3913,Drama,PG-13,86249969,John Lee Hancock,0
+460,460,460,The Aristocats,3870,Musical,G,255161499,,1
+461,461,461,Calendar Girls,3903,Comedy,PG-13,42379650,Nigel Cole,0
+462,462,462,Unstrung Heroes,3895,Drama,PG,15365850,Diane Keaton,0
+463,463,463,Three Fugitives,3889,Comedy,PG-13,85757817,Francis Veber,0
+464,464,464,Tomorrowland,3915,Adventure,PG,93436322,Brad Bird,0
+465,465,465,The Village,3904,Thriller/Suspense,PG-13,155021748,M. Night Shyamalan,0
+466,466,466,Alexander and the Terrible Horrible…,3914,Comedy,PG,69055550,Miguel Arteta,0
+467,467,467,Arachnophobia,3890,Thriller/Suspense,PG-13,106290270,Frank Marshall,0
+468,468,468,Lincoln,3912,Drama,PG-13,192122330,,0
+469,469,469,The Horse Whisperer,3898,Drama,PG-13,135497531,Robert Redford,0
+470,470,470,Muppets Most Wanted,3914,Comedy,PG,52807594,James Bobin,0
+471,471,471,Fantasia 2000 (IMAX),3900,Musical,G,94852354,,0
+472,472,472,Spaced Invaders,3890,Comedy,PG,29964452,Patrick Read Johnson,0
+473,473,473,Just Visiting,3901,Comedy,PG-13,7114869,,0
+474,474,474,Holes,3903,Drama,PG,94203395,Andrew Davis,0
+475,475,475,The Last Shot,3904,Comedy,R,629502,Jeff Nathanson,0
+476,476,476,Meet the Robinsons,3907,Adventure,G,119860589,Stephen Anderson,1
+477,477,477,Dead Poets Society,3889,Drama,PG,202531517,Peter Weir,0
+478,478,478,Avengers: Age of Ultron,3915,Action,PG-13,459005868,Joss Whedon,0
+479,479,479,Man of the House,3895,Comedy,PG,77573459,Stephen Herek,0
+480,480,480,Bears,3914,Documentary,G,18346024,,0
+481,481,481,Passed Away,3892,,PG-13,8187848,,0
+482,482,482,ESPN's Ultimate X - The Movie,3902,Documentary,PG,6089874,Bruce Hendricks,0
+483,483,483,Atlantis: The Lost Empire,3901,Adventure,PG,125188122,,1
+484,484,484,Ernest Goes to Camp,3887,Comedy,,50686462,,0
+485,485,485,Teacher's Pet: The Movie,3904,Comedy,PG,8812764,,0
+486,486,486,Spy Hard,3896,Comedy,PG-13,51373912,Rick Friedberg,0
+487,487,487,Snow Dogs,3902,Comedy,PG,117745317,Brian Levant,0
+488,488,488,Frankenweenie,3912,Comedy,PG,37363513,Tim Burton,0
+489,489,489,Tuck Everlasting,3902,Drama,PG,27789959,,0
+490,490,490,Hauru no ugoku shiro,3905,Adventure,PG,6194870,Hayao Miyazaki,0
+491,491,491,Gedo Senki (Tales from Earthsea),3910,Adventure,PG-13,51988,Goro Miyazaki,0
+492,492,492,Return to Oz,3885,Adventure,,25215934,Walter Murch,0
+493,493,493,Disney's A Christmas Carol,3909,Drama,PG,154927105,Robert Zemeckis,0
+494,494,494,Prefontaine,3897,Drama,PG-13,1085093,Steve James,0
+495,495,495,Beaches,3888,Drama,PG-13,120381757,Garry Marshall,0
+496,496,496,101 Dalmatians,3861,Comedy,G,1362870985,Stephen Herek,0
+497,497,497,The Last Song,3910,Drama,PG,67258772,Julie Anne Robinson,0
+498,498,498,Father Hood,3893,,PG-13,6654819,Paul Weitz,0
+499,499,499,Encino Man,3892,Comedy,PG,81369058,Les Mayfield,0
+500,500,500,Sweet Home Alabama,3902,Comedy,PG-13,184521151,Andy Tennant,0
+501,501,501,Play it to the Bone,3899,Comedy,R,13180524,Ron Shelton,0
+502,502,502,The Odd Life of Timothy Green,3912,Drama,PG,54914942,Peter Hedges,0
+503,503,503,Honey I Blew Up the Kid,3892,Comedy,PG,119162518,Randal Kleiser,0
+504,504,504,Hercules,3897,Adventure,G,182029412,,1

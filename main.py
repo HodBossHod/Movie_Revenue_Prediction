@@ -27,78 +27,49 @@ from sklearn.metrics import r2_score
 import time
 import requests
 from bs4 import BeautifulSoup
-from yaml import ScalarEvent
-import pickle
+import warnings
+warnings.filterwarnings("ignore")
+# from yaml import ScalarEvent
+# import pickle
+
+# TODO: Feature Scaling on Release Date--->Remove Handle Date Function and make the range from 0 to 1 Hadi Ehab
+# TODO:Rating Column --> Ordinal Encoding Hadi Ehab
+# TODO: Handling missing values for important features (Release date-MPAA_Rating) --> Hadi Atef
+# TODO: movies before 1980 --> G Hadi Ehab
+
+
+# Reading the csv files
 revenue_df = pd.read_csv('movies-revenue.csv')
 actor_df = pd.read_csv('movie-voice-actors.csv')
 director_df = pd.read_csv('new_directors.csv')
 movie_success_df = pd.read_csv('movies-revenue-classification.csv')
 
 
-# What's left to do:
-# Feature Scaling on Release Date--->Remove Handle Date Function and make the range from 0 to 1 Hadi Ehab
-# Rating Column --> Ordinal Encoding Hadi Ehab
-# Handling missing values for important features (Release date-MPAA_Rating) --> Hadi Atef
-# movies before 1980 --> G Hadi Ehab
-# Test Script Hadi Ahmed
-
-
-
 # one hot encoding for movies genre, MPAA_rating & directors names
-def one_hot_encoder(d, columnName):
+def one_hot_encoder_unit(d, columnName):
     y = pd.get_dummies(d[columnName])
     final_df = pd.DataFrame(d.join(y))
     final_df.drop(columnName, axis=1, inplace=True)
     return final_df
 
+
 def ordinalEncoder(df, column_name, ordinal_list):
     encoded_column = df[column_name].replace(ordinal_list)
     return encoded_column
+
 
 # modify the date format
 def handleDate(dr):
     editDate = []
     now = datetime.now().year
     for i in dr:
-        editDate.append(now -i)
+        editDate.append(now - i)
     return pd.DataFrame(editDate)
 
-
-# get directors for na values
-# def get_director(movie_name):
-#     query = movie_name + ' director'  # the movie name +'director'
-#     link_list = []
-#     for j in search(query, tld="co.in", num=1, stop=1, pause=2):
-#         link_list.append(j)
-#
-#     if len(link_list) != 0:
-#         link_comp = link_list[0].split('/')
-#         director = link_comp[-1]  # the director name
-#         director = str(director)
-#         if len(director) <= 43:
-#             while '-' in director:
-#                 director = director.replace('-', ' ')
-#             while '_' in director:
-#                 director = director.replace('_', ' ')
-#             if str(movie_name).lower() in director.lower():
-#                 return ''
-#             director = re.sub("\(.*\)", '', director)
-#             if 'film director'.lower() in director.lower():
-#                 director = director.replace('film director', '')
-#             if re.compile(r"\d+").search(director):
-#                 return ''
-#
-#             print(movie_name + ' : ' + str(director))
-#             return director
-#         else:
-#             return ''
-#     else:
-#         return ''
 
 def get_director(moive):
     moive1 = moive.replace(" ", "+") + '+movie'
     moive2 = moive.replace(" ", "_")
-
     URL1 = f'https://www.google.com/search?q={moive1}&hl=en'
     URL2 = URL1
     URL3 = f'https://www.rottentomatoes.com/m/{moive2}'
@@ -118,17 +89,17 @@ def get_director(moive):
 
 
 # create a dictionary for directors (keys:movietitle, values:directors names)
-def fill_new_director():
+def fill_new_director(df):
     # getting the movie directors
     directors = {'movie_title': [], 'director': []}
-    move_title = list(revenue_df['movie_title'])
+    move_title = list(df['movie_title'])
     for move in move_title:
         directors['movie_title'].append(move)
         directors['director'].append(get_director(move))
     df_directors = pd.DataFrame.from_dict(directors, orient='index').T
     print(df_directors.head())
 
-    df_directors.to_csv('new_directors.csv', index=False)
+    # df_directors.to_csv('new_directors.csv', index=False)
     return df_directors
 
 
@@ -144,7 +115,55 @@ def correlation(df, col_name, value):
     top_corr = df[top_feature].corr()
     sns.heatmap(top_corr, annot=True)
     plt.show()
+    top_feature = top_feature.drop(col_name)
     return top_feature
+
+
+def data_formatting(df):
+    if 'revenue' in df.columns:
+        # removing the dollar sign from movies_df columns
+        df = df.apply(lambda x: x.str.strip('$') if x.name == "revenue" else x)
+        # removing the comma from the numeric columns
+        df = df.apply(lambda x: x.str.replace(',', '') if x.name == "revenue" else x)
+        # converting to numerize our columns (where it is possible)
+        df = df.apply(lambda x: pd.to_numeric(x, errors="ignore") if x.name == "revenue" else x)
+    # cleaning the data of release date
+    df = df.apply(
+        lambda x: x.replace('((\d\d-...-)|(\d-...-))', '', regex=True) if x.name == "release_date" else x)
+    df['release_date'] = df['release_date'].astype('int32')
+    df["release_date"] = np.where(df["release_date"] >= 37, df['release_date'] + 1900,
+                                  df['release_date'] + 2000)
+    return df
+
+
+def merging_tables(revenue, directors, v_actors, get_directors=False):
+    if get_directors:
+        directors = fill_new_director(revenue)
+    revenue_directors_df = pd.merge(revenue, directors, how='outer', on='movie_title')
+    revenue_directors_df.drop_duplicates(inplace=True)  # removing any duplicate cose Merging
+    # revenue_directors_df.to_csv('csvFiles/dir.csv', index=False)     # generate the csv file with the Merged dateBase
+
+    # Merging the result table from the last marge with the Actors Table
+    res = pd.merge(revenue_directors_df, v_actors, how='outer', on='movie_title')
+    res.drop_duplicates(inplace=True)  # removing any duplicate cose Merging
+    res.drop('character', axis=1, inplace=True)  # drop the character colo no need will not matter
+    # handling the null vals by filling it by 0
+    res.fillna(0, inplace=True)
+    if 'revenue' in res.columns:
+        res.drop(res[res.revenue == 0].index, inplace=True)  # drop any row with 0 (null) revenue
+
+    return res
+
+
+def one_hot_encoding(df):
+    # Using One_Hot_Encoding
+    encode_list = ['genre', 'director', 'MPAA_rating', 'voice-actor']
+    df = one_hot_encoder_unit(df, encode_list)
+    for colm in encode_list:
+        if f'{colm}_0' in df.columns:
+            # df.drop(f'{colm}_0', axis=1, inplace=True)
+            df[f'{colm}_0'] = 1
+    return df
 
 
 # apply polynomial regression model
@@ -159,22 +178,18 @@ def poly_reg(degree, X_train, y_train, X_test, y_test, random_state):
     start_time = time.time()  # start time before training
     poly_model1.fit(X_train_poly_model_1, y_train)
     end_time = time.time()  # end time
-
-    prediction = poly_model1.predict(model_1_poly_features.fit_transform(X_test))
-    mse = metrics.mean_squared_error(y_test, prediction)
-    acc = r2_score(y_test, prediction) * 100
+    mse, acc = poly_evaluation(X_test, y_test, poly_model1, model_1_poly_features)
     print(
         f'Mean Square Error of polynomial Regression with degree of ({degree}) and random state ({random_state}) : {mse}')
     print(f'Accuracy of polynomial Regression : {acc} %')
     print(f'Training time of polynomial Regression model : {end_time - start_time}')
-    return mse, acc
+    return poly_model1, model_1_poly_features
 
 
 # apply Multiple linear regression model
 def multi_reg(X_train, y_train, X_test, y_test, random_state):
     # fit the transformed features to Linear Regression
     multi_model1 = linear_model.LinearRegression()
-
     # calculate training time
     start_time = time.time()  # start time before training
     multi_model1.fit(X_train, y_train)
@@ -186,121 +201,70 @@ def multi_reg(X_train, y_train, X_test, y_test, random_state):
     print(f'Mean Square Error of Multiple Linear Regression with random state ({random_state}) : {mse}')
     print(f'Accuracy of Multiple Linear Regression : {acc} %')
     print(f'Training time of Multiple Linear Regression model : {end_time - start_time}')
+    return multi_model1, mse, acc
+
+
+def poly_evaluation(x, y, model, poly):
+    prediction = model.predict(poly.fit_transform(x))
+    mse = metrics.mean_squared_error(y, prediction)
+    acc = r2_score(y, prediction) * 100
     return mse, acc
 
 
-# merging tables
-# director_df = fill_new_director()
-print(revenue_df.shape)
-print(director_df.shape)
-rev_dir_df = pd.merge(revenue_df, director_df, how='inner', on='movie_title')
-rev_dir_df.drop_duplicates(inplace=True)
-print(rev_dir_df.shape)
-rev_dir_df.to_csv('dir.csv', index=False)
-#print(rev_dir_df.shape)
-
-# is_animation_d = {'movie_title': [], 'is_animation': []}
-# movies_list = list(rev_dir_df['movie_title'])
-# actor_movies_list = list(actor_df['movie_title'])
-#
-# for movie in movies_list:
-#     if movie in actor_movies_list:
-#         is_animation_d['movie_title'].append(str(movie))
-#         is_animation_d['is_animation'].append(1)
-#     else:
-#         is_animation_d['movie_title'].append(str(movie))
-#         is_animation_d['is_animation'].append(0)
-
-# is_animation_df = pd.DataFrame.from_dict(is_animation_d, orient='index').T
-# print(is_animation_df.shape)
-# is_animation_df = pd.read_csv('movie-voice-actors.csv')
-movies_df = pd.merge(rev_dir_df, actor_df, how='outer', on='movie_title')
-movies_df.drop_duplicates(inplace=True)
-print(movies_df.shape)
-movies_df.fillna(0, inplace=True)
-movies_df.drop(movies_df[movies_df.revenue == 0].index, inplace=True)
-movies_df.to_csv('clean_data.csv', index=False)
-# merging ended
-# removing the dollar sign from movies_df columns
-movies_df = movies_df.apply(lambda x: x.str.strip('$') if x.name == "revenue" else x)
-# removing the comma from the numeric columns
-movies_df = movies_df.apply(lambda x: x.replace(',', "", regex=True) if x.name == "revenue" else x)
-# converting to numerize our columns (where it is possible)
-movies_df = movies_df.apply(lambda x: pd.to_numeric(x, errors="ignore") if x.name == "revenue" else x)
-# cleaning the data of release date
-movies_df = movies_df.apply(
-    lambda x: x.replace('((\d\d-...-)|(\d-...-))', '', regex=True) if x.name == "release_date" else x)
-movies_df['release_date'] = movies_df['release_date'].astype('int32')
-movies_df["release_date"] = np.where(movies_df["release_date"] >= 37, movies_df['release_date'] + 1900,
-                                     movies_df['release_date'] + 2000)
-# movies_df.to_csv('clean_data.csv', index=False)
-
-n = pd.read_csv('final.csv')
-n = n.apply(
-    lambda x: x.replace('((\d\d-...-)|(\d-...-))', '', regex=True) if x.name == "release_date" else x)
-n['release_date'] = n['release_date'].astype('int32')
-n["release_date"] = np.where(n["release_date"] >= 37, n['release_date'] + 1900,
-                                     n['release_date'] + 2000)
-
-n.to_csv('final.csv')
+def classification_preprocessing(df, prev_df, is_drop):
+    success_encode_list = {"S": 4, "A": 3, "B": 2, "C": 1, "D": 0}
+    if is_drop:
+        print('dropint')
+        df.drop(columns=["release_date", "genre", "MPAA_rating"], inplace=True)
+    df["MovieSuccessLevel"] = ordinalEncoder(df, "MovieSuccessLevel", success_encode_list)
+    if is_drop:
+        df = pd.merge(df, prev_df, how="outer", on="movie_title")
+    if 'revenue' in df.columns:
+        df.drop(columns="revenue", inplace=True)
+    df.to_csv("classification_with_only_ratings.csv", index=False)
+    return df
 
 
-# Using One_Hot_Encoding
-encodlist = ['genre', 'director', 'MPAA_rating', 'voice-actor']
-movies_df = one_hot_encoder(movies_df, encodlist)
-for colm in encodlist:
-    movies_df.drop(f'{colm}_0', axis=1, inplace=True)
-# movies_df.to_csv('clean_data.csv', index=False)
-X = movies_df[correlation(movies_df, 'revenue', 0.17)]
-Y = movies_df['revenue']  # Label
-X = X.drop('revenue', axis=1, inplace=False)
-print(Y.shape)
-MSE = []
-Acc = []
-dgree = []
-# for i in range(2,15):
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.23, shuffle=True, random_state=20)
-mse, acc = poly_reg(2, X_train, y_train, X_test, y_test, 20)
-# MSE.append(mse)
-# Acc.append(acc)
-# dgree.append(i)
-#
-# plt.xlabel('Random State', fontsize=20)
-# plt.ylabel('MSE', fontsize=20)
-# plt.plot(dgree, MSE, color='red', linewidth=3)
-# plt.show()
+# ----------------------------- merging tables -----------------------
+movies_df = merging_tables(revenue_df, director_df, actor_df)
+# ------------------------------------------ formatting the date ------------------------------
+movies_df = data_formatting(movies_df)
+# --------------------------------- one hot encoding -----------
+movies_df = one_hot_encoding(movies_df)
+movies_df.to_csv('clean_data.csv')
+# ------------------------------------------ preprocessing end -------------------------------------
+milestone1_features = correlation(movies_df, 'revenue', 0.17)
+milestone1_label = 'revenue'
+X = movies_df[milestone1_features]
+Y = movies_df[milestone1_label]  # Label
 
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, shuffle=True, random_state=20)
+p_model, p_features = poly_reg(2, X_train, y_train, X_test, y_test, 20)
 multi_reg(X_train, y_train, X_test, y_test, 28)
-movies_df.to_csv('clean_data.csv', index=False)
 
+# ------------------------ Classification -------------------------------------------
 
-
-# ------------------------------------------------------------------ Classification ------------------------------------------------------------------
-success_encode_list = {"S":4, "A":3, "B":2, "C":1, "D":0}
 
 print(f"\t\t\t\t\t\t\t{Fore.CYAN}Classification Starts Here{Style.RESET_ALL}")
 # preparing the dataframe for classification
-movie_success_df.drop(columns=["release_date", "genre", "MPAA_rating"], inplace=True)
-movie_success_df["MovieSuccessLevel"] = ordinalEncoder(movie_success_df, "MovieSuccessLevel", success_encode_list)
-movie_success_df = pd.merge(movie_success_df, movies_df, how="outer", on="movie_title")
-movie_success_df.drop(columns="revenue", inplace=True)
-movie_success_df.to_csv("classification_with_only_ratings.csv", index=False)
+movie_success_df = classification_preprocessing(movie_success_df, movies_df, True)
 
-X = movie_success_df[correlation(movie_success_df, 'MovieSuccessLevel', 0.12)]
-Y = movie_success_df['MovieSuccessLevel']
-X = X.drop('MovieSuccessLevel', axis=1, inplace=False)
+milestone2_features = correlation(movie_success_df, 'MovieSuccessLevel', 0.12)
+milestone2_label = 'MovieSuccessLevel'
+X = movie_success_df[milestone2_features]
+Y = movie_success_df[milestone2_label]
 
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, shuffle=True, random_state=21)
 
 # using boosting with decision trees
-dt = AdaBoostClassifier(DecisionTreeClassifier(max_depth=4),algorithm="SAMME.R",n_estimators=100)
+dt = AdaBoostClassifier(DecisionTreeClassifier(max_depth=4), algorithm="SAMME.R", n_estimators=100)
 scaler = StandardScaler()
 scaler.fit(X_train)
 
 X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 
-dt.fit(X_train,y_train)
+dt.fit(X_train, y_train)
 y_prediction = dt.predict(X_test)
 accuracy = np.mean(y_prediction == y_test) * 100
 print(f"Adaboost decision tree accuracy: {accuracy} %")
@@ -316,14 +280,58 @@ predictions = rbf_svc.predict(X_test)
 accuracy = np.mean(predictions == y_test) * 100
 print(f"RBF SVM accuracy: {accuracy} %")
 
-# # using linear classifier
-# svc = svm.SVC(kernel='linear', C=1).fit(X_train, y_train)
-# predictions = svc.predict(X_test)
-# accuracy = np.mean(predictions == y_test) * 100
-# print(f"linear SVM accuracy: {accuracy} %")
 
-#svc = svm.SVC(kernel='linear', C=C).fit(X_train, y_train)
-#for i, clf in enumerate((svc, rbf_svc)):
-#    predictions = clf.predict(X_test)
-#    accuracy = np.mean(predictions == y_test)
-#    print(accuracy)
+# =================================== The testing script =============================
+# TODO: Test Script Hadi Ahmed -DONE
+def milestone1_test():
+    revenue = pd.read_csv('TestCases/Milestone 1/movies-test-samples.csv')
+    director = pd.read_csv('TestCases/Milestone 1/movie-director.csv')
+    actor = pd.read_csv('TestCases/Milestone 1/movie-voice-actors.csv')
+    director.rename(columns={'name': 'movie_title'}, inplace=True)
+    actor.rename(columns={'movie': 'movie_title'}, inplace=True)
+    res = merging_tables(revenue, director, actor , True)
+    # ------------------------------------------ formatting the date ------------------------------
+    res = data_formatting(res)
+
+    # --------------------------------- one hot encoding -----------
+    res = one_hot_encoding(res)
+
+    for c in milestone1_features:
+        if not (c in res.columns):
+            res[c] = 0
+    res.to_csv('tmp.csv')
+    x = res[milestone1_features]
+    y = res[milestone1_label]
+
+    mse, acc = poly_evaluation(x, y, p_model, p_features)
+    print('====================  testing  =========')
+    print(f'the Mean square error of the model = {mse} and the accuracy = {acc}')
+
+
+def milestone2_test():
+    success = pd.read_csv('TestCases/Milestone 2/movies-revenue-test-samples.csv')
+    director = pd.read_csv('TestCases/Milestone 2/movie-director-test-samples.csv')
+    actor = pd.read_csv('TestCases/Milestone 2/movie-voice-actors-test-samples.csv')
+    director.rename(columns={'name': 'movie_title'}, inplace=True)
+    actor.rename(columns={'movie': 'movie_title'}, inplace=True)
+    res = merging_tables(success, director, actor, True)
+    res = data_formatting(res)
+    res = one_hot_encoding(res)
+    success_encode_list = {"S": 4, "A": 3, "B": 2, "C": 1, "D": 0}
+    res["MovieSuccessLevel"] = ordinalEncoder(res, "MovieSuccessLevel", success_encode_list)
+    for c in milestone2_features:
+        if not (c in res.columns):
+            res[c] = 0
+    res.to_csv('tmp2.csv', index=False)
+    # print(res.columns)
+    x = res[milestone2_features]
+    y = res[milestone2_label]
+    predictions1 = rbf_svc.predict(x)
+    accuracy1 = np.mean(predictions1 == (y)) * 100
+    print(f"========== testing ===========\nRBF SVM accuracy: {accuracy1} %")
+    accuracy = svm_kernel_ovo.score(x, y) * 100
+    print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} %')
+
+
+milestone1_test()
+milestone2_test()

@@ -3,6 +3,55 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\TestCases\Milestone 1\movie-director.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\TestCases\Milestone 1\movie-voice-actors.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\TestCases\Milestone 1\movies-test-samples.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\TestCases\Milestone 2\movie-director-test-samples.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\TestCases\Milestone 2\movie-voice-actors-test-samples.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\TestCases\Milestone 2\movies-revenue-test-samples.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\classification_with_only_ratings.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\clean_data.csv">
           <value>
             <Attribute>
@@ -18,6 +67,13 @@
           </value>
         </entry>
         <entry key="\dir.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\final.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -53,6 +109,20 @@
           </value>
         </entry>
         <entry key="\one hot final.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\tmp.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\tmp2.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
