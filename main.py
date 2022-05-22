@@ -2,7 +2,7 @@ from matplotlib import style
 from sklearn import preprocessing
 import pandas as pd
 import numpy as np
-from colorama import Fore, Style
+#from colorama import Fore, Style
 from sklearn import linear_model
 from sklearn import metrics
 from dateutil import parser
@@ -25,15 +25,15 @@ from sklearn import tree
 from dateutil.parser import parse
 from sklearn.metrics import r2_score
 import time
-import requests
-from bs4 import BeautifulSoup
+#import requests
+#from bs4 import BeautifulSoup
 import warnings
 warnings.filterwarnings("ignore")
 # from yaml import ScalarEvent
 # import pickle
 
 # TODO: Feature Scaling on Release Date--->Remove Handle Date Function and make the range from 0 to 1 Hadi Ehab
-# TODO:Rating Column --> Ordinal Encoding Hadi Ehab
+# TODO: Rating Column --> Ordinal Encoding Hadi Ehab
 # TODO: Handling missing values for important features (Release date-MPAA_Rating) --> Hadi Atef
 # TODO: movies before 1980 --> G Hadi Ehab
 
@@ -56,6 +56,7 @@ def one_hot_encoder_unit(d, columnName):
 def ordinalEncoder(df, column_name, ordinal_list):
     encoded_column = df[column_name].replace(ordinal_list)
     return encoded_column
+
 
 
 # modify the date format
@@ -157,7 +158,7 @@ def merging_tables(revenue, directors, v_actors, get_directors=False):
 
 def one_hot_encoding(df):
     # Using One_Hot_Encoding
-    encode_list = ['genre', 'director', 'MPAA_rating', 'voice-actor']
+    encode_list = ['genre', 'director', 'voice-actor']
     df = one_hot_encoder_unit(df, encode_list)
     for colm in encode_list:
         if f'{colm}_0' in df.columns:
@@ -224,11 +225,57 @@ def classification_preprocessing(df, prev_df, is_drop):
     df.to_csv("classification_with_only_ratings.csv", index=False)
     return df
 
+def getDistinct(dataframe,column):
+    distinct_ratings=dataframe[column].unique()
+    print(distinct_ratings)
+    return distinct_ratings
 
+def getOrdinalRating(keys):
+    differentRatings={}
+    i=keys.size
+    for key in keys:
+        # if(key!=0):
+        differentRatings[key]=i
+        i=i-1
+    return differentRatings
+
+def removeZeroRatings(moviesData,ratingsColumn,moviesYear):
+    index=0
+    for i in moviesData[ratingsColumn]:
+        if(i==0&moviesData[moviesYear][index]<=1980):
+            moviesData[ratingsColumn][index]="G"
+        index=index+1
+
+# def getZeroCount(dataframe,column):
+#     zeros=0
+#     for i in dataframe[column]:
+#         if(i==0):
+#            zeros=zeros+1
+#     return zeros
+
+def featureScaling(X,a,b):
+    X = np.array(X)
+    Normalized_X=np.zeros((X.shape[0],X.shape[1]))
+    for i in range(X.shape[1]):
+        Normalized_X[:,i]=((X[:,i]-min(X[:,i]))/(max(X[:,i])-min(X[:,i])))*(b-a)+a
+    return Normalized_X
 # ----------------------------- merging tables -----------------------
 movies_df = merging_tables(revenue_df, director_df, actor_df)
 # ------------------------------------------ formatting the date ------------------------------
 movies_df = data_formatting(movies_df)
+#--------------------------------- remove 0 ratings ------------
+#removeZeroRatings(movies_df,"MPAA_rating","release_date")
+#---------------------------------- ordinal encoding ------------
+# zeros=getZeroCount(movies_df,"MPAA_rating")
+# print(zeros)
+distinctRatings=getDistinct(movies_df,"MPAA_rating")
+ordinalDictionary=getOrdinalRating(distinctRatings)
+#Rating_dict = {"G": 6, "PG": 5, "PG-13": 4, "Not Rated":0,"R": 2 ,"TV-MA":2,"X": 1,"NC-17":1}
+
+# movies_df['MPAA_rating'] = movies_df.MPAA_rating.map(Rating_dict)
+movies_df["MPAA_rating"]=ordinalEncoder(movies_df,"MPAA_rating",ordinalDictionary)
+#---------------------------------- feature scaling ------------
+#movies_df["release_date"]=featureScaling(movies_df["release_date"],0,1)
 # --------------------------------- one hot encoding -----------
 movies_df = one_hot_encoding(movies_df)
 movies_df.to_csv('clean_data.csv')
@@ -245,7 +292,7 @@ multi_reg(X_train, y_train, X_test, y_test, 28)
 # ------------------------ Classification -------------------------------------------
 
 
-print(f"\t\t\t\t\t\t\t{Fore.CYAN}Classification Starts Here{Style.RESET_ALL}")
+print(f"\t\t\t\t\t\t\tClassification Starts Here")
 # preparing the dataframe for classification
 movie_success_df = classification_preprocessing(movie_success_df, movies_df, True)
 
@@ -264,21 +311,31 @@ scaler.fit(X_train)
 X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 
+start_time=time.time()
 dt.fit(X_train, y_train)
+end_time=time.time()
 y_prediction = dt.predict(X_test)
 accuracy = np.mean(y_prediction == y_test) * 100
 print(f"Adaboost decision tree accuracy: {accuracy} %")
+print(f'Training time of Adaboost : {end_time - start_time}')
 
 # using one vs one classifier
+start_time=time.time()
 svm_kernel_ovo = OneVsOneClassifier(SVC(kernel='linear', C=0.5)).fit(X_train, y_train)
+end_time=time.time()
 accuracy = svm_kernel_ovo.score(X_test, y_test) * 100
 print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} %')
+print(f'Training time of Linear 1v1 SVM : {end_time - start_time}')
 
 # using rbf classifier
+start_time=time.time()
 rbf_svc = svm.SVC(kernel='rbf', gamma=1, C=1).fit(X_train, y_train)
+end_time=time.time()
 predictions = rbf_svc.predict(X_test)
 accuracy = np.mean(predictions == y_test) * 100
 print(f"RBF SVM accuracy: {accuracy} %")
+
+print(f'Training time of RBF classifier : {end_time - start_time}')
 
 
 # =================================== The testing script =============================
@@ -292,7 +349,12 @@ def milestone1_test():
     res = merging_tables(revenue, director, actor , True)
     # ------------------------------------------ formatting the date ------------------------------
     res = data_formatting(res)
-
+    #---------------------------------- remove zero ratings --------------
+    #removeZeroRatings(res, "MPAA_rating", "release_date")
+    # --------------------------------- ordinal encoding -----------
+    differentRatings=getDistinct(res,"MPAA_rating")
+    ratingsDictionary=getOrdinalRating(differentRatings)
+    res["MPAA_rating"]=ordinalEncoder(res,"MPAA_rating",ratingsDictionary)
     # --------------------------------- one hot encoding -----------
     res = one_hot_encoding(res)
 
@@ -316,6 +378,10 @@ def milestone2_test():
     actor.rename(columns={'movie': 'movie_title'}, inplace=True)
     res = merging_tables(success, director, actor, True)
     res = data_formatting(res)
+    #removeZeroRatings(res, "MPAA_rating", "release_date")
+    differentRatings = getDistinct(res, "MPAA_rating")
+    ratingsDictionary = getOrdinalRating(differentRatings)
+    res["MPAA_rating"] = ordinalEncoder(res, "MPAA_rating", ratingsDictionary)
     res = one_hot_encoding(res)
     success_encode_list = {"S": 4, "A": 3, "B": 2, "C": 1, "D": 0}
     res["MovieSuccessLevel"] = ordinalEncoder(res, "MovieSuccessLevel", success_encode_list)
