@@ -368,10 +368,8 @@ def milestone2_test():
     tmpy = dt.predict(X_test2)
     accuracy = np.mean(tmpy == y) * 100
     print(f"Adaboost decision tree accuracy: {accuracy} %")
-    predictions2 = svm_kernel_ovo.predict(x)
-    accuracy12 = np.mean(predictions2 == (y)) * 100
-    #accuracy = svm_kernel_ovo.score(x, y) * 100
-    print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy12} %')
+    accuracy = svm_kernel_ovo.score(x, y) * 100
+    print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} %')
 
 
 milestone1_test()
