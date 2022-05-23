@@ -20,6 +20,7 @@ from sklearn.svm import SVC
 from sklearn.multiclass import OneVsOneClassifier
 from sklearn import metrics
 from sklearn import tree
+import pickle
 from dateutil.parser import parse
 from sklearn.metrics import r2_score
 import time
@@ -86,7 +87,7 @@ def fill_new_director(df):
         directors['movie_title'].append(move)
         directors['director'].append(get_director(move))
     df_directors = pd.DataFrame.from_dict(directors, orient='index').T
-    # df_directors.to_csv('new_directors.csv', index=False)
+    # df_directors.to_csv('CSV Files/new_directors.csv', index=False)
     return df_directors
 
 
@@ -148,14 +149,14 @@ def one_hot_encoding(df):
     df = one_hot_encoder_unit(df, encode_list)
     for colm in encode_list:
         if f'{colm}_0' in df.columns:
-            # df.drop(f'{colm}_0', axis=1, inplace=True)
-            df[f'{colm}_0'] = 1
+            df.drop(f'{colm}_0', axis=1, inplace=True)
     return df
 
 
 # apply polynomial regression model
 def poly_reg(degree, X_train, y_train, X_test, y_test, random_state):
     model_1_poly_features = PolynomialFeatures(degree=degree)
+
     # transforms the existing features to higher degree features.
     X_train_poly_model_1 = model_1_poly_features.fit_transform(X_train)
     # fit the transformed features to Linear Regression
@@ -165,6 +166,7 @@ def poly_reg(degree, X_train, y_train, X_test, y_test, random_state):
     start_time = time.time()  # start time before training
     poly_model1.fit(X_train_poly_model_1, y_train)
     end_time = time.time()  # end time
+    pickle.dump(poly_model1, open("Models/poly.pickle",'wb'))
     mse, acc = poly_evaluation(X_test, y_test, poly_model1, model_1_poly_features)
     print(
         f'Mean Square Error of polynomial Regression with degree of ({degree}) and random state ({random_state}) : {mse}')
@@ -207,7 +209,7 @@ def classification_preprocessing(df, prev_df, is_drop):
         df = pd.merge(df, prev_df, how="outer", on="movie_title")
     if 'revenue' in df.columns:
         df.drop(columns="revenue", inplace=True)
-    df.to_csv("classification_with_only_ratings.csv", index=False)
+    df.to_csv("CSV Files/classification_with_only_ratings.csv", index=False)
     return df
 
 def getDistinct(dataframe,column):
@@ -246,7 +248,7 @@ movies_df["MPAA_rating"]=ordinalEncoder(movies_df,"MPAA_rating",ordinalDictionar
 movies_df = featureScaling(movies_df, 0, 1)
 # --------------------------------- one hot encoding -----------
 movies_df = one_hot_encoding(movies_df)
-movies_df.to_csv('clean_data.csv')
+movies_df.to_csv('CSV Files/clean_data.csv')
 # ------------------------------------------ preprocessing end -------------------------------------
 milestone1_features = correlation(movies_df, 'revenue', 0.17)
 milestone1_label = 'revenue'
@@ -256,6 +258,7 @@ Y = movies_df[milestone1_label]  # Label
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, shuffle=True, random_state=20)
 p_model, p_features = poly_reg(2, X_train, y_train, X_test, y_test, 20)
 multi_reg(X_train, y_train, X_test, y_test, 28)
+
 
 # ------------------------ Classification -------------------------------------------
 
@@ -282,6 +285,8 @@ X_test = scaler.transform(X_test)
 start_time=time.time()
 dt.fit(X_train, y_train)
 end_time=time.time()
+
+pickle.dump(dt, open("Models/decision_tree.pickle",'wb'))
 y_prediction = dt.predict(X_test)
 accuracy = np.mean(y_prediction == y_test) * 100
 print(f"Adaboost decision tree accuracy: {accuracy} %")
@@ -291,6 +296,7 @@ print(f'Training time of Adaboost : {end_time - start_time}')
 start_time=time.time()
 svm_kernel_ovo = OneVsOneClassifier(SVC(kernel='linear', C=0.13)).fit(X_train, y_train)
 end_time=time.time()
+pickle.dump(svm_kernel_ovo, open("Models/ovo.pickle",'wb'))
 accuracy = svm_kernel_ovo.score(X_test, y_test) * 100
 print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} %')
 print(f'Training time of Linear 1v1 SVM : {end_time - start_time}')
@@ -298,7 +304,9 @@ print(f'Training time of Linear 1v1 SVM : {end_time - start_time}')
 # using rbf classifier
 start_time=time.time()
 rbf_svc = svm.SVC(kernel='rbf', gamma=1, C=1).fit(X_train, y_train)
+pickle.dump(rbf_svc, open("Models/rbf.pickle",'wb'))
 end_time=time.time()
+
 predictions = rbf_svc.predict(X_test)
 accuracy = np.mean(predictions == y_test) * 100
 print(f"RBF SVM accuracy: {accuracy} %")
@@ -331,18 +339,23 @@ def milestone1_test():
     for c in milestone1_features:
         if not (c in res.columns):
             res[c] = 0
-    res.to_csv('tmp.csv')
+    res.to_csv('CSV Files/tmp.csv')
+
     x = res[milestone1_features]
     y = res[milestone1_label]
+    #poly_model_load = pickle.load(open("Models/poly.pickle",'rb'))
     mse, acc = poly_evaluation(x, y, p_model, p_features)
     print('====================  testing  =========')
     print(f'the Mean square error of the model = {mse} and the accuracy = {acc}')
-
 
 def milestone2_test():
     success = pd.read_csv('TestCases/Milestone 2/movies-revenue-test-samples.csv')
     director = pd.read_csv('TestCases/Milestone 2/movie-director-test-samples.csv')
     actor = pd.read_csv('TestCases/Milestone 2/movie-voice-actors-test-samples.csv')
+    ovo_model = pickle.load(open("Models/ovo.pickle",'rb'))
+    rbf_model = pickle.load(open("Models/rbf.pickle",'rb'))
+    tree_model = pickle.load(open("Models/decision_tree.pickle",'rb'))
+
     director.rename(columns={'name': 'movie_title'}, inplace=True)
     actor.rename(columns={'movie': 'movie_title'}, inplace=True)
     res = merging_tables(success, director, actor, True)
@@ -358,22 +371,22 @@ def milestone2_test():
     for c in milestone2_features:
         if not (c in res.columns):
             res[c] = 0
-    res.to_csv('tmp2.csv', index=False)
+    res.to_csv('CSV Files/tmp2.csv', index=False)
     x = res[milestone2_features]
     y = res[milestone2_label]
     start_time = time.time()
-    predictions1 = rbf_svc.predict(x)
+    predictions1 = rbf_model.predict(x)
     end_time = time.time()
     accuracy1 = np.mean(predictions1 == (y)) * 100
     print(f"========== testing ===========\nRBF SVM accuracy: {accuracy1} % at time {end_time - start_time}")
     start_time = time.time()
     X_test2 = scaler.transform(x)
-    tmpy = dt.predict(X_test2)
+    tmpy = tree_model.predict(X_test2)
     end_time = time.time()
     accuracy = np.mean(tmpy == y) * 100
     print(f"Adaboost decision tree accuracy: {accuracy} % at time {end_time - start_time}")
     start_time = time.time()
-    accuracy = svm_kernel_ovo.score(x, y) * 100
+    accuracy = ovo_model.score(x, y) * 100
     end_time = time.time()
     print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} % at time {end_time - start_time}')
 
