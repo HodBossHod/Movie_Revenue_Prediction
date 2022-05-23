@@ -361,15 +361,21 @@ def milestone2_test():
     res.to_csv('tmp2.csv', index=False)
     x = res[milestone2_features]
     y = res[milestone2_label]
+    start_time = time.time()
     predictions1 = rbf_svc.predict(x)
+    end_time = time.time()
     accuracy1 = np.mean(predictions1 == (y)) * 100
-    print(f"========== testing ===========\nRBF SVM accuracy: {accuracy1} %")
+    print(f"========== testing ===========\nRBF SVM accuracy: {accuracy1} % at time {end_time - start_time}")
+    start_time = time.time()
     X_test2 = scaler.transform(x)
     tmpy = dt.predict(X_test2)
+    end_time = time.time()
     accuracy = np.mean(tmpy == y) * 100
-    print(f"Adaboost decision tree accuracy: {accuracy} %")
+    print(f"Adaboost decision tree accuracy: {accuracy} % at time {end_time - start_time}")
+    start_time = time.time()
     accuracy = svm_kernel_ovo.score(x, y) * 100
-    print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} %')
+    end_time = time.time()
+    print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} % at time {end_time - start_time}')
 
 
 milestone1_test()
