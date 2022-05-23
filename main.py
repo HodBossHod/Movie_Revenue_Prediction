@@ -2,7 +2,6 @@ from matplotlib import style
 from sklearn import preprocessing
 import pandas as pd
 import numpy as np
-#from colorama import Fore, Style
 from sklearn import linear_model
 from sklearn import metrics
 from dateutil import parser
@@ -12,7 +11,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
-# from googlesearch import search
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import AdaBoostClassifier
@@ -25,17 +23,10 @@ from sklearn import tree
 from dateutil.parser import parse
 from sklearn.metrics import r2_score
 import time
-#import requests
-#from bs4 import BeautifulSoup
+import requests
+from bs4 import BeautifulSoup
 import warnings
 warnings.filterwarnings("ignore")
-# from yaml import ScalarEvent
-# import pickle
-
-# TODO: Feature Scaling on Release Date--->Remove Handle Date Function and make the range from 0 to 1 Hadi Ehab
-# TODO: Rating Column --> Ordinal Encoding Hadi Ehab
-# TODO: Handling missing values for important features (Release date-MPAA_Rating) --> Hadi Atef
-# TODO: movies before 1980 --> G Hadi Ehab
 
 
 # Reading the csv files
@@ -59,13 +50,10 @@ def ordinalEncoder(df, column_name, ordinal_list):
 
 
 
-# modify the date format
-def handleDate(dr):
-    editDate = []
-    now = datetime.now().year
-    for i in dr:
-        editDate.append(now - i)
-    return pd.DataFrame(editDate)
+def featureScaling(X,a,b):
+    new_released = preprocessing.MinMaxScaler(feature_range=(a, b))
+    X['release_date'] = new_released.fit_transform(X['release_date'].values.reshape(-1, 1))
+    return X
 
 
 def get_director(moive):
@@ -98,8 +86,6 @@ def fill_new_director(df):
         directors['movie_title'].append(move)
         directors['director'].append(get_director(move))
     df_directors = pd.DataFrame.from_dict(directors, orient='index').T
-    print(df_directors.head())
-
     # df_directors.to_csv('new_directors.csv', index=False)
     return df_directors
 
@@ -200,12 +186,12 @@ def multi_reg(X_train, y_train, X_test, y_test, random_state):
     mse = metrics.mean_squared_error(y_test, prediction)
     acc = r2_score(y_test, prediction) * 100
     print(f'Mean Square Error of Multiple Linear Regression with random state ({random_state}) : {mse}')
-    print(f'Accuracy of Multiple Linear Regression : {acc} %')
+    print(f'R2 Score of Multiple Linear Regression : {acc} %')
     print(f'Training time of Multiple Linear Regression model : {end_time - start_time}')
     return multi_model1, mse, acc
 
 
-def poly_evaluation(x, y, model, poly):
+def poly_evaluation(x: object, y: object, model: object, poly: object) -> object:
     prediction = model.predict(poly.fit_transform(x))
     mse = metrics.mean_squared_error(y, prediction)
     acc = r2_score(y, prediction) * 100
@@ -215,7 +201,6 @@ def poly_evaluation(x, y, model, poly):
 def classification_preprocessing(df, prev_df, is_drop):
     success_encode_list = {"S": 4, "A": 3, "B": 2, "C": 1, "D": 0}
     if is_drop:
-        print('dropint')
         df.drop(columns=["release_date", "genre", "MPAA_rating"], inplace=True)
     df["MovieSuccessLevel"] = ordinalEncoder(df, "MovieSuccessLevel", success_encode_list)
     if is_drop:
@@ -227,14 +212,12 @@ def classification_preprocessing(df, prev_df, is_drop):
 
 def getDistinct(dataframe,column):
     distinct_ratings=dataframe[column].unique()
-    print(distinct_ratings)
     return distinct_ratings
 
 def getOrdinalRating(keys):
     differentRatings={}
     i=keys.size
     for key in keys:
-        # if(key!=0):
         differentRatings[key]=i
         i=i-1
     return differentRatings
@@ -246,36 +229,21 @@ def removeZeroRatings(moviesData,ratingsColumn,moviesYear):
             moviesData[ratingsColumn][index]="G"
         index=index+1
 
-# def getZeroCount(dataframe,column):
-#     zeros=0
-#     for i in dataframe[column]:
-#         if(i==0):
-#            zeros=zeros+1
-#     return zeros
 
-def featureScaling(X,a,b):
-    X = np.array(X)
-    Normalized_X=np.zeros((X.shape[0],X.shape[1]))
-    for i in range(X.shape[1]):
-        Normalized_X[:,i]=((X[:,i]-min(X[:,i]))/(max(X[:,i])-min(X[:,i])))*(b-a)+a
-    return Normalized_X
 # ----------------------------- merging tables -----------------------
 movies_df = merging_tables(revenue_df, director_df, actor_df)
-# ------------------------------------------ formatting the date ------------------------------
+# -----------------------------formatting the date ----------------------
 movies_df = data_formatting(movies_df)
-#--------------------------------- remove 0 ratings ------------
+#--------------------------- remove 0 ratings before 1980------------
 #removeZeroRatings(movies_df,"MPAA_rating","release_date")
+# ----------------------------------- feature Scaling  ------------------------------
+movies_df = featureScaling(movies_df,0,1)
 #---------------------------------- ordinal encoding ------------
-# zeros=getZeroCount(movies_df,"MPAA_rating")
-# print(zeros)
 distinctRatings=getDistinct(movies_df,"MPAA_rating")
 ordinalDictionary=getOrdinalRating(distinctRatings)
-#Rating_dict = {"G": 6, "PG": 5, "PG-13": 4, "Not Rated":0,"R": 2 ,"TV-MA":2,"X": 1,"NC-17":1}
-
-# movies_df['MPAA_rating'] = movies_df.MPAA_rating.map(Rating_dict)
 movies_df["MPAA_rating"]=ordinalEncoder(movies_df,"MPAA_rating",ordinalDictionary)
 #---------------------------------- feature scaling ------------
-#movies_df["release_date"]=featureScaling(movies_df["release_date"],0,1)
+movies_df = featureScaling(movies_df, 0, 1)
 # --------------------------------- one hot encoding -----------
 movies_df = one_hot_encoding(movies_df)
 movies_df.to_csv('clean_data.csv')
@@ -321,7 +289,7 @@ print(f'Training time of Adaboost : {end_time - start_time}')
 
 # using one vs one classifier
 start_time=time.time()
-svm_kernel_ovo = OneVsOneClassifier(SVC(kernel='linear', C=0.5)).fit(X_train, y_train)
+svm_kernel_ovo = OneVsOneClassifier(SVC(kernel='linear', C=0.13)).fit(X_train, y_train)
 end_time=time.time()
 accuracy = svm_kernel_ovo.score(X_test, y_test) * 100
 print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} %')
@@ -339,7 +307,6 @@ print(f'Training time of RBF classifier : {end_time - start_time}')
 
 
 # =================================== The testing script =============================
-# TODO: Test Script Hadi Ahmed -DONE
 def milestone1_test():
     revenue = pd.read_csv('TestCases/Milestone 1/movies-test-samples.csv')
     director = pd.read_csv('TestCases/Milestone 1/movie-director.csv')
@@ -358,13 +325,15 @@ def milestone1_test():
     # --------------------------------- one hot encoding -----------
     res = one_hot_encoding(res)
 
+    # ------------------------------------------ feature Scaling  ------------------------------
+    res = featureScaling(res,0,1)
+
     for c in milestone1_features:
         if not (c in res.columns):
             res[c] = 0
     res.to_csv('tmp.csv')
     x = res[milestone1_features]
     y = res[milestone1_label]
-
     mse, acc = poly_evaluation(x, y, p_model, p_features)
     print('====================  testing  =========')
     print(f'the Mean square error of the model = {mse} and the accuracy = {acc}')
@@ -383,20 +352,26 @@ def milestone2_test():
     ratingsDictionary = getOrdinalRating(differentRatings)
     res["MPAA_rating"] = ordinalEncoder(res, "MPAA_rating", ratingsDictionary)
     res = one_hot_encoding(res)
+    res = featureScaling(res, 0, 1)
     success_encode_list = {"S": 4, "A": 3, "B": 2, "C": 1, "D": 0}
     res["MovieSuccessLevel"] = ordinalEncoder(res, "MovieSuccessLevel", success_encode_list)
     for c in milestone2_features:
         if not (c in res.columns):
             res[c] = 0
     res.to_csv('tmp2.csv', index=False)
-    # print(res.columns)
     x = res[milestone2_features]
     y = res[milestone2_label]
     predictions1 = rbf_svc.predict(x)
     accuracy1 = np.mean(predictions1 == (y)) * 100
     print(f"========== testing ===========\nRBF SVM accuracy: {accuracy1} %")
-    accuracy = svm_kernel_ovo.score(x, y) * 100
-    print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy} %')
+    X_test2 = scaler.transform(x)
+    tmpy = dt.predict(X_test2)
+    accuracy = np.mean(tmpy == y) * 100
+    print(f"Adaboost decision tree accuracy: {accuracy} %")
+    predictions2 = svm_kernel_ovo.predict(x)
+    accuracy12 = np.mean(predictions2 == (y)) * 100
+    #accuracy = svm_kernel_ovo.score(x, y) * 100
+    print(f'Linear Kernel OneVsOne SVM accuracy: {accuracy12} %')
 
 
 milestone1_test()

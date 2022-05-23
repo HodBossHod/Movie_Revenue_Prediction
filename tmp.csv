@@ -1,11 +1,11 @@
-,movie_title,release_date,MPAA_rating,revenue,genre_Comedy,genre_Drama,director_,voice-actor_0,voice-actor_Ben Wright,voice-actor_Betty Lou Gerson,voice-actor_Cate Bauer,voice-actor_David Frankham,voice-actor_Frederick Worlock; J. Pat O'Malley,voice-actor_J. Pat O'Malley,voice-actor_Lisa Davis,voice-actor_Rod Taylor,genre_Musical,director_Clyde Geronimi,director_David Hand,director_Norm Ferguson,voice-actor_Adriana Caselotti,voice-actor_Billy Gilbert,voice-actor_Eddie Collins,voice-actor_Harry Stockwell,voice-actor_Lucille La Verne,voice-actor_Moroni Olsen,voice-actor_Otis Harlan,voice-actor_Pinto Colvig,voice-actor_Roy Atwell,voice-actor_Scotty Mattraw,voice-actor_Stuart Buchanan
-0,The Associate,1996,3,24333094,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1,101 Dalmatians,1996,2,258728898,1,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-2,101 Dalmatians,1996,2,258728898,1,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-3,101 Dalmatians,1996,2,258728898,1,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-4,101 Dalmatians,1996,2,258728898,1,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-5,101 Dalmatians,1996,2,258728898,1,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-6,101 Dalmatians,1996,2,258728898,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-7,101 Dalmatians,1996,2,258728898,1,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-8,101 Dalmatians,1996,2,258728898,1,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-9,Cradle Will Rock,1999,1,4609153,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+,movie_title,release_date,MPAA_rating,revenue,genre_Comedy,genre_Drama,director_Donald Petrie,director_Stephen Herek,director_Tim Robbins,voice-actor_0,voice-actor_Ben Wright,voice-actor_Betty Lou Gerson,voice-actor_Cate Bauer,voice-actor_David Frankham,voice-actor_Frederick Worlock; J. Pat O'Malley,voice-actor_J. Pat O'Malley,voice-actor_Lisa Davis,voice-actor_Rod Taylor,genre_Musical,director_Clyde Geronimi,director_David Hand,director_Norm Ferguson,voice-actor_Adriana Caselotti,voice-actor_Billy Gilbert,voice-actor_Eddie Collins,voice-actor_Harry Stockwell,voice-actor_Lucille La Verne,voice-actor_Moroni Olsen,voice-actor_Otis Harlan,voice-actor_Pinto Colvig,voice-actor_Roy Atwell,voice-actor_Scotty Mattraw,voice-actor_Stuart Buchanan
+0,The Associate,0.0,3,24333094,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1,101 Dalmatians,0.0,2,258728898,1,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2,101 Dalmatians,0.0,2,258728898,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+3,101 Dalmatians,0.0,2,258728898,1,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+4,101 Dalmatians,0.0,2,258728898,1,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+5,101 Dalmatians,0.0,2,258728898,1,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+6,101 Dalmatians,0.0,2,258728898,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+7,101 Dalmatians,0.0,2,258728898,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+8,101 Dalmatians,0.0,2,258728898,1,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+9,Cradle Will Rock,1.0,1,4609153,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
